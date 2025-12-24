@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -153,32 +154,40 @@ export default function Home() {
               </div>
             </div>
 
-            {/* 3D Stats Card */}
-            <div className="relative perspective-1000">
-              <div
-                className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 ring-1 ring-white/20 shadow-2xl transform hover:rotate-y-3 transition-transform duration-500"
-                style={{ transformStyle: "preserve-3d" }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent rounded-3xl" />
-                <div className="relative grid grid-cols-2 gap-8">
-                  {stats.map((stat, index) => (
-                    <div
-                      key={stat.label}
-                      className="text-center p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors"
-                      style={{ animationDelay: `${index * 100}ms` }}
-                    >
-                      <p className="text-4xl sm:text-5xl font-bold text-secondary">
-                        {stat.value}<span className="text-2xl">{stat.suffix}</span>
-                      </p>
-                      <p className="mt-2 text-sm text-white/70">{stat.label}</p>
-                    </div>
-                  ))}
-                </div>
+            {/* Hero Image with Stats Overlay */}
+            <div className="relative">
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/hero/family-beach.jpg"
+                  alt="Happy family enjoying San Diego beach"
+                  width={600}
+                  height={500}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
 
-                {/* Floating badge */}
-                <div className="absolute -bottom-4 -right-4 bg-secondary text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
-                  Trusted Since 2010
+                {/* Stats overlay */}
+                <div className="absolute bottom-0 inset-x-0 p-6">
+                  <div className="grid grid-cols-2 gap-4">
+                    {stats.map((stat, index) => (
+                      <div
+                        key={stat.label}
+                        className="text-center p-3 rounded-xl bg-white/10 backdrop-blur-sm"
+                      >
+                        <p className="text-2xl sm:text-3xl font-bold text-white">
+                          {stat.value}<span className="text-lg">{stat.suffix}</span>
+                        </p>
+                        <p className="text-xs text-white/70">{stat.label}</p>
+                      </div>
+                    ))}
+                  </div>
                 </div>
+              </div>
+
+              {/* Floating badge */}
+              <div className="absolute -bottom-4 -right-4 bg-secondary text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
+                San Diego Based
               </div>
             </div>
           </div>
@@ -248,15 +257,18 @@ export default function Home() {
 
             <div className="order-1 lg:order-2 relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <div className="aspect-[4/5] bg-gradient-to-br from-primary to-secondary flex items-center justify-center p-8">
-                  <div className="text-center text-white space-y-6">
-                    <svg className="w-32 h-32 mx-auto opacity-90" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
-                    </svg>
-                    <div className="space-y-2">
-                      <p className="text-2xl font-bold">Your Family's Future</p>
-                      <p className="text-white/80">Protected. Secured. Simplified.</p>
-                    </div>
+                <Image
+                  src="/images/families/multi-gen.jpg"
+                  alt="Multi-generational family enjoying time together"
+                  width={600}
+                  height={750}
+                  className="w-full h-auto object-cover aspect-[4/5]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 text-center">
+                    <p className="text-xl font-bold text-foreground">Your Family&apos;s Future</p>
+                    <p className="text-foreground/70">Protected. Secured. Simplified.</p>
                   </div>
                 </div>
               </div>

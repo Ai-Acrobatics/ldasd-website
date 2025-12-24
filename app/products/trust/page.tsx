@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -78,9 +79,20 @@ export default function TrustPage() {
       {/* Benefits */}
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-foreground">Why Choose a Living Trust?</h2>
-            <p className="mt-4 text-lg text-foreground/70">Key benefits that protect your family</p>
+          <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+            <div>
+              <h2 className="text-4xl font-bold text-foreground">Why Choose a Living Trust?</h2>
+              <p className="mt-4 text-lg text-foreground/70">Key benefits that protect your family</p>
+            </div>
+            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+              <Image
+                src="/images/families/grandparents.jpg"
+                alt="Grandparents enjoying retirement with family"
+                width={500}
+                height={350}
+                className="w-full h-auto object-cover"
+              />
+            </div>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[

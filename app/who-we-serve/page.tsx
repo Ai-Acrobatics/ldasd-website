@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -90,17 +91,33 @@ export default function WhoWeServePage() {
           <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-secondary/20 blur-[100px]" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <span className="inline-block text-secondary font-semibold tracking-wider text-sm uppercase mb-4">
-            Who We Serve
-          </span>
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
-            Estate Planning for Everyone
-          </h1>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            From young families to retirees, homeowners to pet parents—if you have loved ones
-            or assets to protect, we're here for you.
-          </p>
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <span className="inline-block text-secondary font-semibold tracking-wider text-sm uppercase mb-4">
+                Who We Serve
+              </span>
+              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
+                Estate Planning for Everyone
+              </h1>
+              <p className="text-xl text-white/80">
+                From young families to retirees, homeowners to pet parents—if you have loved ones
+                or assets to protect, we&apos;re here for you.
+              </p>
+            </div>
+            <div className="relative mx-auto lg:mx-0">
+              <div className="rounded-3xl overflow-hidden shadow-2xl max-w-md">
+                <Image
+                  src="/images/hero/family-sunset.jpg"
+                  alt="Happy family enjoying San Diego sunset"
+                  width={500}
+                  height={400}
+                  className="w-full h-auto object-cover"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

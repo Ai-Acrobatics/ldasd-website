@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,10 +10,17 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="bg-background">
-      {/* Hero */}
-      <section className="relative py-24 sm:py-32 bg-gradient-to-br from-primary via-primary-dark to-primary overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-accent/20 blur-[100px]" />
+      {/* Hero with San Diego Skyline */}
+      <section className="relative py-24 sm:py-32 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/san-diego/skyline.jpg"
+            alt="San Diego Skyline - Home of LDASD Estate Planning"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary/80 to-primary-dark/90" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">

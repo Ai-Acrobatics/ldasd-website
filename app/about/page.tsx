@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -97,17 +98,18 @@ export default function AboutPage() {
             </div>
 
             <div className="relative">
-              <div className="aspect-[4/5] rounded-3xl bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center overflow-hidden">
-                <div className="text-center text-white/50">
-                  <svg className="w-40 h-40 mx-auto opacity-30" fill="none" viewBox="0 0 24 24" strokeWidth="0.5" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                  </svg>
-                  <p className="text-xl font-medium mt-4">LDASD Estate Planning</p>
-                  <p className="text-sm opacity-60">Making Estate Planning Accessible</p>
-                </div>
+              <div className="rounded-3xl overflow-hidden shadow-2xl">
+                <Image
+                  src="/images/san-diego/coronado-beach.jpg"
+                  alt="Beautiful San Diego Coronado Beach - Home of LDASD Estate Planning"
+                  width={600}
+                  height={750}
+                  className="w-full h-auto object-cover aspect-[4/5]"
+                />
               </div>
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent rounded-2xl shadow-lg flex items-center justify-center">
-                <span className="text-primary font-bold text-2xl text-center leading-tight">LDASD</span>
+              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-lg p-4 max-w-[200px]">
+                <p className="text-primary font-bold text-lg">Based in San Diego</p>
+                <p className="text-foreground/60 text-sm">Serving families in all 50 states</p>
               </div>
             </div>
           </div>
