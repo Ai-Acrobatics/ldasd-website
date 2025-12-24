@@ -2,59 +2,82 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Who We Serve | Sean Gelt - LDASD Financial, San Diego",
-  description: "LDASD Financial serves retirees, pre-retirees, business owners, and high-net-worth families in San Diego. Personalized wealth management by Sean Gelt.",
-  keywords: "wealth management San Diego, high net worth financial advisor, retiree financial planning, business owner financial planning, LDASD Financial",
+  title: "Who We Serve | Estate Planning for Every Family",
+  description: "LDASD serves families, couples, parents, retirees, and anyone who wants to protect what matters most. Affordable estate planning for everyone.",
 };
 
 const clientTypes = [
   {
-    title: "Retirees & Pre-Retirees",
-    description: "Individuals within 10 years of retirement or already retired who need comprehensive income planning, Social Security optimization, and wealth preservation strategies.",
+    title: "Young Families with Children",
+    description: "Parents with minor children who need to name guardians, ensure their children are protected, and distribute assets responsibly.",
     needs: [
-      "Retirement income planning",
-      "Social Security optimization",
-      "Medicare and healthcare planning",
-      "Required Minimum Distribution strategies",
-      "Legacy and estate planning",
-    ],
-    icon: "🏖️",
-  },
-  {
-    title: "Business Owners & Executives",
-    description: "Entrepreneurs and corporate leaders with complex compensation, equity positions, and business succession needs requiring sophisticated planning.",
-    needs: [
-      "Executive compensation planning",
-      "Stock option and equity strategies",
-      "Business succession planning",
-      "Key person insurance",
-      "Retirement plan design",
-    ],
-    icon: "💼",
-  },
-  {
-    title: "High-Net-Worth Families",
-    description: "Affluent families seeking comprehensive wealth management, multi-generational planning, and coordinated advice across all aspects of their financial lives.",
-    needs: [
-      "Comprehensive wealth management",
-      "Multi-generational planning",
-      "Trust and estate strategies",
-      "Philanthropic planning",
-      "Family governance",
+      "Guardianship designation for children",
+      "Asset distribution planning",
+      "Life insurance coordination",
+      "Creating a financial safety net",
+      "Affordable, accessible documents",
     ],
     icon: "👨‍👩‍👧‍👦",
   },
   {
-    title: "Professionals & Physicians",
-    description: "Doctors, attorneys, and other professionals with high incomes, demanding careers, and unique planning challenges who need efficient, proactive advice.",
+    title: "Couples & Married Partners",
+    description: "Married or unmarried couples who want to protect each other, avoid probate, and ensure their assets pass smoothly to their partner.",
     needs: [
-      "Tax-efficient wealth accumulation",
-      "Student loan strategies",
-      "Disability and liability protection",
-      "Practice transition planning",
-      "Work-life balance optimization",
+      "Joint estate planning documents",
+      "Spousal protection strategies",
+      "Avoiding probate together",
+      "Healthcare decision authority",
+      "Asset transfer planning",
     ],
-    icon: "⚕️",
+    icon: "💑",
+  },
+  {
+    title: "Homeowners & Property Owners",
+    description: "Anyone who owns real estate and wants to avoid the costly, time-consuming probate process while keeping their estate private.",
+    needs: [
+      "Living trust to avoid probate",
+      "Property transfer planning",
+      "Privacy protection",
+      "Multi-property management",
+      "Real estate asset distribution",
+    ],
+    icon: "🏡",
+  },
+  {
+    title: "Retirees & Pre-Retirees",
+    description: "Individuals in or approaching retirement who need comprehensive planning for healthcare decisions, asset distribution, and legacy protection.",
+    needs: [
+      "Healthcare directives",
+      "Power of attorney documents",
+      "Legacy planning",
+      "Incapacity protection",
+      "Multi-generational planning",
+    ],
+    icon: "🏖️",
+  },
+  {
+    title: "Single Parents",
+    description: "Single parents who need to ensure their children are protected and cared for if something happens, with clear guardianship and financial provisions.",
+    needs: [
+      "Critical guardianship designation",
+      "Financial protection for children",
+      "Affordable estate planning",
+      "Life insurance integration",
+      "Simplified asset distribution",
+    ],
+    icon: "👩‍👧",
+  },
+  {
+    title: "Pet Owners",
+    description: "Pet parents who want to ensure their beloved companions are cared for, with designated caregivers and financial provisions.",
+    needs: [
+      "Pet guardianship designation",
+      "Financial provisions for pet care",
+      "Caregiver instructions",
+      "Veterinary care planning",
+      "Peace of mind for pet parents",
+    ],
+    icon: "🐾",
   },
 ];
 
@@ -64,19 +87,19 @@ export default function WhoWeServePage() {
       {/* Hero */}
       <section className="relative py-24 sm:py-32 bg-gradient-to-br from-primary via-primary-dark to-primary overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-accent/20 blur-[100px]" />
+          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-secondary/20 blur-[100px]" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <span className="inline-block text-accent font-semibold tracking-wider text-sm uppercase mb-4">
+          <span className="inline-block text-secondary font-semibold tracking-wider text-sm uppercase mb-4">
             Who We Serve
           </span>
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
-            Our Ideal Clients
+            Estate Planning for Everyone
           </h1>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            We specialize in serving successful individuals and families who value
-            personalized, fiduciary advice and seek a true partner in their financial journey.
+            From young families to retirees, homeowners to pet parents—if you have loved ones
+            or assets to protect, we're here for you.
           </p>
         </div>
       </section>
@@ -84,91 +107,117 @@ export default function WhoWeServePage() {
       {/* Client Types */}
       <section className="py-24">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="space-y-16">
-            {clientTypes.map((client, index) => (
-              <div
-                key={client.title}
-                className={`grid lg:grid-cols-2 gap-12 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-              >
-                <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                  <span className="text-6xl mb-6 block">{client.icon}</span>
-                  <h2 className="text-3xl font-bold text-foreground mb-4">{client.title}</h2>
-                  <p className="text-lg text-foreground/70 mb-6">{client.description}</p>
-                  <h3 className="font-semibold text-foreground mb-4">Common Needs:</h3>
-                  <ul className="space-y-3">
-                    {client.needs.map((need) => (
-                      <li key={need} className="flex items-center gap-3">
-                        <svg className="w-5 h-5 text-accent flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
-                        </svg>
-                        <span className="text-foreground/70">{need}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={`${index % 2 === 1 ? 'lg:order-1' : ''}`}>
-                  <div className="aspect-square rounded-2xl bg-gradient-to-br from-primary/10 to-accent/5 flex items-center justify-center">
-                    <span className="text-9xl opacity-30">{client.icon}</span>
-                  </div>
-                </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {clientTypes.map((client) => (
+              <div key={client.title} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+                <span className="text-6xl mb-6 block">{client.icon}</span>
+                <h2 className="text-2xl font-bold text-foreground mb-4">{client.title}</h2>
+                <p className="text-foreground/70 mb-6">{client.description}</p>
+                <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wider">Common Needs:</h3>
+                <ul className="space-y-3">
+                  {client.needs.map((need) => (
+                    <li key={need} className="flex items-start gap-3">
+                      <svg className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                      </svg>
+                      <span className="text-sm text-foreground/80">{need}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Minimum Requirements */}
+      {/* Everyone Benefits */}
       <section className="py-24 bg-primary/5">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-4">
-              Engagement Minimums
+            <h2 className="text-4xl font-bold text-foreground mb-4">
+              Why Everyone Needs Estate Planning
             </h2>
             <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
-              To provide the level of personalized service our clients deserve,
-              we typically work with clients who meet the following criteria.
+              Estate planning isn't just for the wealthy. Here's why everyone benefits:
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
-              <p className="text-accent text-5xl font-bold mb-2">$500K+</p>
-              <p className="text-foreground font-semibold mb-2">Investable Assets</p>
-              <p className="text-foreground/70 text-sm">
-                For comprehensive wealth management and investment advisory services
-              </p>
-            </div>
-            <div className="bg-white rounded-2xl p-8 shadow-lg text-center">
-              <p className="text-accent text-5xl font-bold mb-2">$250K+</p>
-              <p className="text-foreground font-semibold mb-2">Financial Planning</p>
-              <p className="text-foreground/70 text-sm">
-                For standalone financial planning engagements
-              </p>
-            </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Have Children?",
+                description: "You MUST name guardians. Without a will, the court decides who raises your kids.",
+              },
+              {
+                title: "Own Property?",
+                description: "Avoid probate with a living trust. Save your family months of hassle and thousands in legal fees.",
+              },
+              {
+                title: "Want Privacy?",
+                description: "Wills become public record. Trusts keep your estate details completely private.",
+              },
+              {
+                title: "Love Someone?",
+                description: "Ensure the people and causes you care about are protected and provided for.",
+              },
+            ].map((reason) => (
+              <div key={reason.title} className="bg-white rounded-2xl p-6 shadow-lg text-center">
+                <h3 className="text-xl font-bold text-primary mb-3">{reason.title}</h3>
+                <p className="text-foreground/70 text-sm">{reason.description}</p>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
 
-          <p className="text-center text-foreground/60 mt-8 text-sm">
-            Not sure if we&apos;re the right fit? Schedule a consultation and we&apos;ll discuss your situation.
+      {/* No Minimums */}
+      <section className="py-24">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold text-foreground mb-6">
+            No Minimum Net Worth Required
+          </h2>
+          <p className="text-xl text-foreground/70 mb-8">
+            Unlike traditional estate planning attorneys who may require $500K+ in assets,
+            we believe everyone deserves quality estate planning. Our products start at just $199.
           </p>
+          <div className="bg-secondary/10 rounded-2xl p-8">
+            <p className="text-2xl font-bold text-secondary mb-4">
+              "Estate planning for everyone, not just the wealthy."
+            </p>
+            <p className="text-foreground/70">
+              Whether you have $10,000 or $10,000,000, protecting your family is what matters most.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* CTA */}
       <section className="py-24 bg-primary">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Is LDASD Financial Right for You?
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Ready to Protect What Matters Most?
           </h2>
           <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-            Schedule a complimentary consultation to discuss your situation
-            and see if we&apos;re the right fit.
+            Join over 100,000 families who've created their estate plans with LDASD.
+            Starting at just $199.
           </p>
-          <Link
-            href="/book"
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-lg font-semibold text-primary hover:bg-accent-light transition-all"
-          >
-            Book Your Free Consultation
-          </Link>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/products"
+              className="inline-flex items-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all"
+            >
+              View Products & Pricing
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+            <Link
+              href="/learn"
+              className="inline-flex items-center gap-2 rounded-full bg-white/10 px-8 py-4 text-lg font-semibold text-white ring-1 ring-white/20 hover:bg-white/20 transition-all"
+            >
+              Learn More
+            </Link>
+          </div>
         </div>
       </section>
     </div>

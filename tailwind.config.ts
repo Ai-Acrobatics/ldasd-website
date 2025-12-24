@@ -8,18 +8,25 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Trust & Will inspired palette
         primary: {
-          DEFAULT: "#0A2540",
-          light: "#1A3550",
-          dark: "#051530",
+          DEFAULT: "#2D6A4F",
+          light: "#40916C",
+          dark: "#1B4332",
+        },
+        secondary: {
+          DEFAULT: "#7B2CBF",
+          light: "#9D4EDD",
+          dark: "#5A189A",
         },
         accent: {
-          DEFAULT: "#C4A052",
-          light: "#D4B062",
-          dark: "#B49042",
+          DEFAULT: "#2D6A4F",
+          light: "#40916C",
+          dark: "#1B4332",
         },
-        background: "#FAFAFA",
+        background: "#FFFEF5",
         foreground: "#1A1A2E",
+        ivory: "#FFFEF5",
       },
       fontFamily: {
         sans: ["DM Sans", "system-ui", "sans-serif"],

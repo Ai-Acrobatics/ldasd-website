@@ -2,43 +2,24 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "LDASD Financial Services | Sean Gelt - San Diego Wealth Management & Retirement Planning",
-  description: "Expert retirement planning, investment management, and wealth preservation services in San Diego. Sean Gelt provides personalized fiduciary financial strategies. Schedule your free consultation today.",
-  keywords: "San Diego wealth management, retirement planning, investment advisor, financial planning, estate planning, tax strategies, fiduciary advisor, LDASD, Sean Gelt",
+  title: "LDASD Estate Planning | Affordable Trusts & Wills for Peace of Mind",
+  description: "Protect what matters most with simple, affordable estate planning. Create your living trust, will, or complete estate plan online. Attorney-backed documents starting at $199.",
+  keywords: "estate planning, living trust, will, guardianship, estate plan, online trust, affordable estate planning, San Diego",
 };
 
 const stats = [
-  { label: "Years of Expertise", value: "25+", suffix: "" },
-  { label: "Assets Under Management", value: "$500", suffix: "M+" },
-  { label: "Client Satisfaction Rate", value: "98", suffix: "%" },
-  { label: "Families Served", value: "1,200", suffix: "+" },
+  { label: "Families Protected", value: "100K", suffix: "+" },
+  { label: "States Covered", value: "50", suffix: "" },
+  { label: "Customer Satisfaction", value: "4.9", suffix: "/5" },
+  { label: "Starting Price", value: "$199", suffix: "" },
 ];
 
-const services = [
+const products = [
   {
-    name: "Retirement Planning",
-    description: "Build a secure retirement with personalized income strategies, Social Security optimization, and comprehensive retirement readiness assessments tailored to your unique goals.",
-    href: "/services/retirement-planning",
-    icon: (
-      <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
-  },
-  {
-    name: "Investment Management",
-    description: "Grow your wealth with disciplined portfolio management, diversification strategies, and ongoing rebalancing designed to maximize returns while managing risk.",
-    href: "/services/investment-management",
-    icon: (
-      <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
-      </svg>
-    ),
-  },
-  {
-    name: "Wealth Preservation",
-    description: "Protect your legacy with sophisticated risk management, asset protection strategies, and wealth transfer planning that safeguards what you&apos;ve worked to build.",
-    href: "/services/wealth-preservation",
+    name: "Trust",
+    description: "Avoid probate and protect your assets with a comprehensive living trust. Keep your estate private and ensure your wishes are honored.",
+    href: "/products/trust",
+    price: "Starting at $599",
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
@@ -46,22 +27,35 @@ const services = [
     ),
   },
   {
-    name: "Tax Optimization Strategies",
-    description: "Minimize your tax burden with proactive tax-loss harvesting, Roth conversion strategies, and tax-efficient investment placement that keeps more money in your pocket.",
-    href: "/services/tax-strategies",
+    name: "Will",
+    description: "Name guardians for your children and distribute your assets with a legally binding last will and testament.",
+    href: "/products/will",
+    price: "Starting at $199",
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
       </svg>
     ),
   },
   {
-    name: "Estate Planning",
-    description: "Ensure your legacy endures with comprehensive estate plans, trust strategies, and succession planning that protects your family and honors your wishes.",
-    href: "/services/estate-planning",
+    name: "Guardianship",
+    description: "Designate who will care for your minor children if something happens to you. The most important decision you'll make.",
+    href: "/products/guardianship",
+    price: "Included with Will",
     icon: (
       <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Complete Estate Plan",
+    description: "Everything you need: Trust, Will, Power of Attorney, and Healthcare Directive. Complete peace of mind in one package.",
+    href: "/products/estate-plan",
+    price: "Starting at $699",
+    icon: (
+      <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M11.35 3.836c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m8.9-4.414c.376.023.75.05 1.124.08 1.131.094 1.976 1.057 1.976 2.192V16.5A2.25 2.25 0 0118 18.75h-2.25m-7.5-10.5H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V18.75m-7.5-10.5h6.375c.621 0 1.125.504 1.125 1.125v9.375m-8.25-3l1.5 1.5 3-3.75" />
       </svg>
     ),
   },
@@ -69,21 +63,21 @@ const services = [
 
 const testimonials = [
   {
-    content: "Sean and his team completely transformed our approach to retirement. Their personalized strategy gave us the confidence to retire three years earlier than we thought possible.",
-    author: "Robert & Linda M.",
-    role: "Retired Healthcare Executives",
+    content: "Creating our living trust was so much easier than I expected. LDASD made it simple, affordable, and gave us complete peace of mind about our family's future.",
+    author: "Sarah & Michael T.",
+    role: "Parents of Three",
     rating: 5,
   },
   {
-    content: "The tax optimization strategies LDASD implemented saved us over $45,000 in the first year alone. More importantly, we finally have a clear roadmap for our financial future.",
+    content: "After putting it off for years, we finally got our will done through LDASD. Knowing our kids are protected and our guardianship wishes are documented is priceless.",
     author: "Jennifer K.",
-    role: "Technology Business Owner",
+    role: "Single Mom",
     rating: 5,
   },
   {
-    content: "After working with multiple advisors over the years, LDASD stands apart. Their fiduciary commitment and genuine care for our success is evident in everything they do.",
-    author: "Michael T.",
-    role: "Chief Medical Officer",
+    content: "The complete estate plan was exactly what we needed. Living trust, healthcare directive, power of attorney - all done in one afternoon. Worth every penny.",
+    author: "Robert & Linda M.",
+    role: "Retirees",
     rating: 5,
   },
 ];
@@ -95,8 +89,8 @@ export default function Home() {
       <section className="relative isolate min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-primary">
         {/* Animated gradient orbs - 3D effect */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-accent/20 blur-[120px] animate-pulse" />
-          <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-accent/10 blur-[100px] animate-pulse" style={{ animationDelay: "1s" }} />
+          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-secondary/20 blur-[120px] animate-pulse" />
+          <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-secondary/10 blur-[100px] animate-pulse" style={{ animationDelay: "1s" }} />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-white/5 blur-[150px]" />
         </div>
 
@@ -104,8 +98,8 @@ export default function Home() {
         <div
           className="absolute inset-0 opacity-20"
           style={{
-            backgroundImage: `linear-gradient(rgba(196, 160, 82, 0.1) 1px, transparent 1px),
-                             linear-gradient(90deg, rgba(196, 160, 82, 0.1) 1px, transparent 1px)`,
+            backgroundImage: `linear-gradient(rgba(123, 44, 191, 0.1) 1px, transparent 1px),
+                             linear-gradient(90deg, rgba(123, 44, 191, 0.1) 1px, transparent 1px)`,
             backgroundSize: "60px 60px",
             transform: "perspective(1000px) rotateX(60deg)",
             transformOrigin: "top",
@@ -116,43 +110,42 @@ export default function Home() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="max-w-2xl">
               <div className="mb-8">
-                <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-sm font-medium text-accent ring-1 ring-accent/20 backdrop-blur-sm">
+                <span className="inline-flex items-center gap-2 rounded-full bg-secondary/10 px-4 py-2 text-sm font-medium text-secondary ring-1 ring-secondary/20 backdrop-blur-sm">
                   <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
                   </span>
-                  Trusted Fiduciary Financial Advisors
+                  Attorney-Backed Estate Planning
                 </span>
               </div>
 
               <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl leading-[1.1]">
-                <span className="block">Clarity.</span>
-                <span className="block">Confidence.</span>
-                <span className="block bg-gradient-to-r from-accent via-accent-light to-accent bg-clip-text text-transparent">
-                  Financial Peace of Mind.
+                <span className="block">Protect</span>
+                <span className="block">What Matters</span>
+                <span className="block bg-gradient-to-r from-secondary via-accent-light to-secondary bg-clip-text text-transparent">
+                  Most.
                 </span>
               </h1>
 
               <p className="mt-8 text-xl leading-8 text-white/80 max-w-xl">
-                Personalized wealth management strategies that protect your legacy,
-                optimize your taxes, and grow your retirement savings with confidence.
+                Simple, affordable estate planning. Create your trust, will, or complete estate plan online in minutes. Starting at just $199.
               </p>
 
               <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <Link
                   href="/book"
-                  className="group relative inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-base font-semibold text-primary shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:bg-accent-light transition-all duration-300 transform hover:scale-105"
+                  className="group relative inline-flex items-center gap-2 rounded-full bg-secondary px-8 py-4 text-base font-semibold text-white shadow-lg shadow-secondary/25 hover:shadow-secondary/40 hover:bg-accent transition-all duration-300 transform hover:scale-105"
                 >
-                  <span>Schedule Your Free Strategy Call</span>
+                  <span>Create Your Estate Plan</span>
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
                 </Link>
                 <Link
-                  href="/services"
-                  className="inline-flex items-center gap-2 text-white/90 hover:text-accent transition-colors font-medium"
+                  href="/products"
+                  className="inline-flex items-center gap-2 text-white/90 hover:text-secondary transition-colors font-medium"
                 >
-                  Explore Our Services
+                  View Products & Pricing
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
                   </svg>
@@ -166,7 +159,7 @@ export default function Home() {
                 className="relative bg-white/10 backdrop-blur-xl rounded-3xl p-8 ring-1 ring-white/20 shadow-2xl transform hover:rotate-y-3 transition-transform duration-500"
                 style={{ transformStyle: "preserve-3d" }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/10 to-transparent rounded-3xl" />
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 to-transparent rounded-3xl" />
                 <div className="relative grid grid-cols-2 gap-8">
                   {stats.map((stat, index) => (
                     <div
@@ -174,7 +167,7 @@ export default function Home() {
                       className="text-center p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors"
                       style={{ animationDelay: `${index * 100}ms` }}
                     >
-                      <p className="text-4xl sm:text-5xl font-bold text-accent">
+                      <p className="text-4xl sm:text-5xl font-bold text-secondary">
                         {stat.value}<span className="text-2xl">{stat.suffix}</span>
                       </p>
                       <p className="mt-2 text-sm text-white/70">{stat.label}</p>
@@ -183,8 +176,8 @@ export default function Home() {
                 </div>
 
                 {/* Floating badge */}
-                <div className="absolute -bottom-4 -right-4 bg-accent text-primary text-sm font-bold px-4 py-2 rounded-full shadow-lg">
-                  CFP® Certified
+                <div className="absolute -bottom-4 -right-4 bg-secondary text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
+                  Trusted Since 2010
                 </div>
               </div>
             </div>
@@ -200,55 +193,52 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 text-foreground/40">
             <span className="text-sm font-medium uppercase tracking-wider">Trusted By</span>
-            <span className="text-lg font-semibold">Forbes Featured</span>
-            <span className="text-lg font-semibold">5-Star Google Reviews</span>
             <span className="text-lg font-semibold">BBB A+ Rated</span>
-            <span className="text-lg font-semibold">NAPFA Member</span>
+            <span className="text-lg font-semibold">4.9★ Average Rating</span>
+            <span className="text-lg font-semibold">100,000+ Families</span>
+            <span className="text-lg font-semibold">50-State Coverage</span>
           </div>
         </div>
       </section>
 
-      {/* About Section with 3D Card Effect */}
+      {/* Why Estate Planning Section */}
       <section className="relative py-24 sm:py-32 bg-background overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
-              <span className="inline-block text-accent font-semibold tracking-wider text-sm uppercase mb-4">
-                Your Trusted Financial Partner
+              <span className="inline-block text-secondary font-semibold tracking-wider text-sm uppercase mb-4">
+                Why Estate Planning Matters
               </span>
               <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-                Meet Sean Gelt, CFP®
+                Have You Thought About What Happens Next?
               </h2>
               <p className="mt-6 text-lg leading-8 text-foreground/70">
-                With over 25 years of experience guiding high-net-worth individuals and families,
-                Sean brings a rare combination of technical expertise and genuine care to every
-                client relationship. As a Certified Financial Planner™ and fiduciary advisor,
-                his only obligation is to your success.
+                Most people think estate planning is only for the wealthy. The truth? If you have loved ones,
+                assets to protect, or minor children, you need an estate plan.
               </p>
               <p className="mt-4 text-lg leading-8 text-foreground/70">
-                Sean specializes in comprehensive retirement income planning, tax optimization
-                strategies, and multi-generational wealth transfer for clients approaching or
-                enjoying retirement. His holistic approach ensures every aspect of your financial
-                life works together seamlessly.
+                Without proper planning, the state decides what happens to your assets and who cares for your
+                children. Your family faces lengthy probate, costly legal fees, and unnecessary stress during
+                an already difficult time.
               </p>
 
-              <div className="mt-8 flex flex-wrap gap-4">
-                {["Certified Financial Planner™", "Fiduciary Advisor", "25+ Years Experience"].map((badge) => (
-                  <span key={badge} className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-sm font-medium text-accent">
-                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+              <div className="mt-8 space-y-4">
+                {["Avoid probate and keep your estate private", "Protect your children with guardianship designations", "Minimize estate taxes and preserve wealth", "Ensure your healthcare wishes are honored"].map((benefit) => (
+                  <div key={benefit} className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-primary mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
                     </svg>
-                    {badge}
-                  </span>
+                    <p className="text-foreground/80">{benefit}</p>
+                  </div>
                 ))}
               </div>
 
               <div className="mt-10">
                 <Link
-                  href="/about"
-                  className="inline-flex items-center gap-2 text-primary font-semibold hover:text-accent transition-colors"
+                  href="/learn"
+                  className="inline-flex items-center gap-2 text-primary font-semibold hover:text-secondary transition-colors"
                 >
-                  Learn More About Our Approach
+                  Learn More About Estate Planning
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
@@ -257,79 +247,73 @@ export default function Home() {
             </div>
 
             <div className="order-1 lg:order-2 relative">
-              {/* 3D Image container */}
-              <div
-                className="relative group"
-                style={{ perspective: "1000px" }}
-              >
-                <div
-                  className="relative rounded-3xl overflow-hidden shadow-2xl transform transition-transform duration-500 group-hover:rotate-y-3"
-                  style={{ transformStyle: "preserve-3d" }}
-                >
-                  <div className="aspect-[4/5] bg-gradient-to-br from-primary to-primary-dark flex items-center justify-center">
-                    <div className="text-center text-white/50">
-                      <svg className="w-32 h-32 mx-auto mb-4 opacity-50" fill="none" viewBox="0 0 24 24" strokeWidth="0.5" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
-                      </svg>
-                      <p className="text-lg font-medium">Sean Gelt, CFP®</p>
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                <div className="aspect-[4/5] bg-gradient-to-br from-primary to-secondary flex items-center justify-center p-8">
+                  <div className="text-center text-white space-y-6">
+                    <svg className="w-32 h-32 mx-auto opacity-90" fill="none" viewBox="0 0 24 24" strokeWidth="1" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819" />
+                    </svg>
+                    <div className="space-y-2">
+                      <p className="text-2xl font-bold">Your Family's Future</p>
+                      <p className="text-white/80">Protected. Secured. Simplified.</p>
                     </div>
                   </div>
-
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent" />
                 </div>
+              </div>
 
-                {/* Floating accent elements */}
-                <div className="absolute -top-6 -right-6 w-24 h-24 bg-accent rounded-2xl shadow-lg flex items-center justify-center transform rotate-12 group-hover:rotate-6 transition-transform">
-                  <span className="text-primary font-bold text-xl">CFP®</span>
-                </div>
-                <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-primary/10 rounded-full blur-2xl" />
+              {/* Floating accent elements */}
+              <div className="absolute -top-6 -right-6 w-24 h-24 bg-secondary rounded-2xl shadow-lg flex items-center justify-center transform rotate-12">
+                <svg className="w-12 h-12 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                </svg>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section with 3D Cards */}
+      {/* Products Section with 3D Cards */}
       <section className="relative py-24 sm:py-32 bg-gradient-to-b from-background via-primary/5 to-background">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
-            <span className="inline-block text-accent font-semibold tracking-wider text-sm uppercase mb-4">
-              Comprehensive Financial Solutions
+            <span className="inline-block text-secondary font-semibold tracking-wider text-sm uppercase mb-4">
+              Simple, Affordable Products
             </span>
             <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
-              Our Wealth Management Services
+              Choose What's Right for You
             </h2>
             <p className="mt-6 text-lg leading-8 text-foreground/70">
-              From retirement planning to estate preservation, we offer a complete suite
-              of fiduciary financial services designed to help you achieve your goals.
+              From basic wills to comprehensive estate plans, we have everything you need to protect your legacy.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.slice(0, 3).map((service, index) => (
+          <div className="grid md:grid-cols-2 gap-8">
+            {products.map((product, index) => (
               <Link
-                key={service.name}
-                href={service.href}
+                key={product.name}
+                href={product.href}
                 className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ring-1 ring-black/5"
                 style={{ perspective: "1000px" }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
 
                 <div className="relative">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-accent/10 text-accent mb-6 group-hover:scale-110 transition-transform">
-                    {service.icon}
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary group-hover:scale-110 transition-transform">
+                      {product.icon}
+                    </div>
+                    <span className="text-sm font-semibold text-secondary">{product.price}</span>
                   </div>
 
-                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {service.name}
+                  <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {product.name}
                   </h3>
 
-                  <p className="text-foreground/70 leading-relaxed">
-                    {service.description}
+                  <p className="text-foreground/70 leading-relaxed mb-6">
+                    {product.description}
                   </p>
 
-                  <div className="mt-6 inline-flex items-center gap-2 text-accent font-semibold group-hover:gap-3 transition-all">
+                  <div className="inline-flex items-center gap-2 text-secondary font-semibold group-hover:gap-3 transition-all">
                     Learn More
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -340,37 +324,16 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mt-8 max-w-4xl mx-auto">
-            {services.slice(3).map((service) => (
-              <Link
-                key={service.name}
-                href={service.href}
-                className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ring-1 ring-black/5"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
-
-                <div className="relative">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-accent/10 text-accent mb-6 group-hover:scale-110 transition-transform">
-                    {service.icon}
-                  </div>
-
-                  <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {service.name}
-                  </h3>
-
-                  <p className="text-foreground/70 leading-relaxed">
-                    {service.description}
-                  </p>
-
-                  <div className="mt-6 inline-flex items-center gap-2 text-accent font-semibold group-hover:gap-3 transition-all">
-                    Learn More
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                    </svg>
-                  </div>
-                </div>
-              </Link>
-            ))}
+          <div className="mt-12 text-center">
+            <Link
+              href="/pricing"
+              className="inline-flex items-center gap-2 text-primary font-semibold text-lg hover:text-secondary transition-colors"
+            >
+              View Full Pricing & Comparison
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
@@ -379,20 +342,20 @@ export default function Home() {
       <section className="relative py-24 sm:py-32 bg-primary overflow-hidden">
         {/* Background orbs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 -right-20 w-[400px] h-[400px] rounded-full bg-accent/10 blur-[100px]" />
+          <div className="absolute top-1/4 -right-20 w-[400px] h-[400px] rounded-full bg-secondary/10 blur-[100px]" />
           <div className="absolute bottom-1/4 -left-20 w-[300px] h-[300px] rounded-full bg-white/5 blur-[80px]" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
-            <span className="inline-block text-accent font-semibold tracking-wider text-sm uppercase mb-4">
-              Client Success Stories
+            <span className="inline-block text-secondary font-semibold tracking-wider text-sm uppercase mb-4">
+              Real Stories, Real Peace of Mind
             </span>
             <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-              What Our Clients Say
+              What Our Families Say
             </h2>
             <p className="mt-6 text-lg leading-8 text-white/70">
-              Discover how we&apos;ve helped families and business owners achieve financial peace of mind.
+              Join thousands of families who've protected what matters most.
             </p>
           </div>
 
@@ -405,7 +368,7 @@ export default function Home() {
                 {/* Stars */}
                 <div className="flex gap-1 mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                    <svg key={i} className="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
@@ -416,8 +379,8 @@ export default function Home() {
                 </blockquote>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-accent/20 flex items-center justify-center">
-                    <span className="text-accent font-bold">{testimonial.author.charAt(0)}</span>
+                  <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
+                    <span className="text-secondary font-bold">{testimonial.author.charAt(0)}</span>
                   </div>
                   <div>
                     <p className="font-semibold text-white">{testimonial.author}</p>
@@ -436,39 +399,39 @@ export default function Home() {
           <div className="relative bg-gradient-to-br from-primary via-primary-dark to-primary rounded-3xl p-12 md:p-20 overflow-hidden shadow-2xl">
             {/* 3D decoration */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute -top-20 -right-20 w-[300px] h-[300px] rounded-full bg-accent/20 blur-[80px]" />
+              <div className="absolute -top-20 -right-20 w-[300px] h-[300px] rounded-full bg-secondary/20 blur-[80px]" />
               <div className="absolute -bottom-20 -left-20 w-[250px] h-[250px] rounded-full bg-white/10 blur-[60px]" />
             </div>
 
             <div className="relative text-center max-w-3xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
-                Ready to Take Control of Your Financial Future?
+                Ready to Protect Your Family?
               </h2>
               <p className="text-xl text-white/80 mb-10">
-                Schedule a complimentary 30-minute strategy session to discuss your goals
-                and discover how we can help you achieve financial peace of mind.
+                Get started in minutes. Create your trust, will, or complete estate plan online today.
+                No appointments necessary.
               </p>
 
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link
                   href="/book"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-accent px-8 py-4 text-lg font-semibold text-primary shadow-lg shadow-accent/25 hover:shadow-accent/40 hover:bg-accent-light transition-all duration-300 transform hover:scale-105"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-secondary/25 hover:shadow-secondary/40 hover:bg-accent transition-all duration-300 transform hover:scale-105"
                 >
-                  Book Your Free Consultation
+                  Start Your Estate Plan Now
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/pricing"
                   className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 px-8 py-4 text-lg font-semibold text-white ring-1 ring-white/20 hover:bg-white/20 transition-all"
                 >
-                  Contact Us
+                  View Pricing
                 </Link>
               </div>
 
               <p className="mt-8 text-sm text-white/50">
-                No obligation. No pressure. Just a conversation about your financial goals.
+                Starting at $199. 100% satisfaction guaranteed. Update anytime.
               </p>
             </div>
           </div>

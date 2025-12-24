@@ -6,19 +6,19 @@ import { useState } from "react";
 const navigation = [
   { name: "Home", href: "/" },
   {
-    name: "Services",
-    href: "/services",
+    name: "Products",
+    href: "/products",
     submenu: [
-      { name: "Retirement Planning", href: "/services/retirement-planning" },
-      { name: "Investment Management", href: "/services/investment-management" },
-      { name: "Wealth Preservation", href: "/services/wealth-preservation" },
-      { name: "Tax Strategies", href: "/services/tax-strategies" },
-      { name: "Estate Planning", href: "/services/estate-planning" },
+      { name: "Trust", href: "/products/trust" },
+      { name: "Will", href: "/products/will" },
+      { name: "Guardianship", href: "/products/guardianship" },
+      { name: "Estate Plan", href: "/products/estate-plan" },
     ],
   },
+  { name: "Pricing", href: "/pricing" },
   { name: "Who We Serve", href: "/who-we-serve" },
+  { name: "Learn", href: "/learn" },
   { name: "About", href: "/about" },
-  { name: "Resources", href: "/resources" },
   { name: "Contact", href: "/contact" },
 ];
 
@@ -94,7 +94,7 @@ export default function Header() {
               href="/book"
               className="rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-primary hover:bg-accent-light transition-colors"
             >
-              Book a Call
+              Get Started
             </Link>
           </div>
         </div>
@@ -157,7 +157,7 @@ export default function Header() {
                     className="block rounded-full bg-accent px-6 py-3 text-center text-base font-semibold text-primary hover:bg-accent-light"
                     onClick={() => setMobileMenuOpen(false)}
                   >
-                    Book a Call
+                    Get Started
                   </Link>
                 </div>
               </div>

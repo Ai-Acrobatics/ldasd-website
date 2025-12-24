@@ -2,36 +2,36 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Sean Gelt | LDASD Financial Services",
-  description: "Meet Sean Gelt, founder of LDASD Financial Services in San Diego. Fiduciary wealth management and financial planning with decades of experience.",
+  title: "About LDASD Estate Planning | Making Estate Planning Accessible",
+  description: "Our mission is to make estate planning simple, affordable, and accessible for everyone. Attorney-backed documents with a human touch.",
 };
 
 const values = [
   {
-    title: "Fiduciary Commitment",
-    description: "We are legally and ethically bound to act in your best interest, always putting your needs ahead of our own.",
+    title: "Affordable & Accessible",
+    description: "Estate planning shouldn't be a luxury. We offer attorney-backed documents at prices everyone can afford.",
   },
   {
-    title: "Personalized Approach",
-    description: "Every client receives a customized financial plan tailored to their unique situation, goals, and values.",
+    title: "Simple & Easy",
+    description: "No confusing legal jargon. Create your estate plan online in minutes with guided, easy-to-understand steps.",
   },
   {
-    title: "Transparent Communication",
-    description: "Clear, honest communication about fees, strategies, and expectations—no hidden agendas or conflicts of interest.",
+    title: "Attorney-Backed",
+    description: "Every document is reviewed by licensed attorneys in your state to ensure legal compliance and your protection.",
   },
   {
-    title: "Long-term Partnership",
-    description: "We build lasting relationships, walking alongside you through every stage of your financial journey.",
+    title: "Always There for You",
+    description: "Life changes. We provide free updates and support so your estate plan grows with your family.",
   },
 ];
 
 const timeline = [
-  { year: "1999", event: "Began career in financial services" },
-  { year: "2005", event: "Earned Certified Financial Planner™ designation" },
-  { year: "2010", event: "Founded LDASD Financial Services" },
-  { year: "2015", event: "Reached $250M in assets under management" },
-  { year: "2020", event: "Expanded to serve 1,000+ families" },
-  { year: "2024", event: "Surpassed $500M in assets under management" },
+  { year: "2010", event: "Founded with a mission to democratize estate planning" },
+  { year: "2015", event: "Helped 10,000 families create their first estate plans" },
+  { year: "2018", event: "Expanded to all 50 states with state-specific documents" },
+  { year: "2020", event: "Launched complete digital estate planning platform" },
+  { year: "2023", event: "Reached 100,000 families protected nationwide" },
+  { year: "2024", event: "Introduced lifetime updates for Complete Plan members" },
 ];
 
 export default function AboutPage() {
@@ -48,11 +48,11 @@ export default function AboutPage() {
             About Us
           </span>
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
-            Your Trusted Financial Partner
+            Making Estate Planning Simple
           </h1>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            For over 25 years, we&apos;ve helped families and business owners achieve financial
-            peace of mind through personalized, fiduciary advice.
+            We believe everyone deserves access to quality estate planning, not just the wealthy.
+            That&apos;s why we&apos;ve made it affordable, accessible, and easy to protect what matters most.
           </p>
         </div>
       </section>
@@ -66,26 +66,26 @@ export default function AboutPage() {
                 Meet Your Advisor
               </span>
               <h2 className="text-4xl font-bold tracking-tight text-foreground mb-6">
-                Sean Gelt
+                Our Mission
               </h2>
               <p className="text-lg text-foreground/70 mb-4">
-                As founder of LDASD Financial Services, Sean brings decades of experience helping
-                high-net-worth individuals and families navigate complex financial decisions with
-                confidence and clarity.
+                At LDASD Estate Planning, we believe protecting your family shouldn't require thousands
+                of dollars in legal fees or weeks of complicated paperwork. That's why we created a platform
+                that makes estate planning simple, affordable, and accessible to everyone.
               </p>
               <p className="text-lg text-foreground/70 mb-4">
-                Based in San Diego, Sean holds himself to the highest ethical standards as a fiduciary advisor.
-                His comprehensive approach addresses every aspect of your financial life—from retirement income
-                planning and investment management to tax optimization and estate planning.
+                Our team combines legal expertise with modern technology to deliver attorney-backed estate
+                planning documents at a fraction of traditional costs. Based in San Diego, California, we serve
+                families in all 50 states with state-specific, legally compliant documents.
               </p>
               <p className="text-lg text-foreground/70 mb-6">
-                Sean believes that true financial planning is about more than just numbers. It&apos;s about
-                understanding your values, your goals, and what matters most to you—then building a
-                strategy that brings those aspirations to life.
+                Whether you need a simple will to name guardians for your children, a living trust to avoid
+                probate, or a complete estate plan with healthcare directives, we're here to help you protect
+                what matters most—affordably and easily.
               </p>
 
               <div className="flex flex-wrap gap-4 mb-8">
-                {["Wealth Management", "Retirement Planning", "San Diego Based", "Fiduciary"].map((badge) => (
+                {["Attorney-Backed", "All 50 States", "San Diego Based", "100K+ Families"].map((badge) => (
                   <span key={badge} className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-sm font-medium text-accent">
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.883l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
@@ -102,8 +102,8 @@ export default function AboutPage() {
                   <svg className="w-40 h-40 mx-auto opacity-30" fill="none" viewBox="0 0 24 24" strokeWidth="0.5" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
                   </svg>
-                  <p className="text-xl font-medium mt-4">Sean Gelt</p>
-                  <p className="text-sm opacity-60">Founder, LDASD Financial</p>
+                  <p className="text-xl font-medium mt-4">LDASD Estate Planning</p>
+                  <p className="text-sm opacity-60">Making Estate Planning Accessible</p>
                 </div>
               </div>
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-accent rounded-2xl shadow-lg flex items-center justify-center">
@@ -171,17 +171,17 @@ export default function AboutPage() {
       <section className="py-24 bg-primary">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-6">
-            Let&apos;s Start a Conversation
+            Ready to Protect Your Family?
           </h2>
           <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
-            We&apos;d love to learn about your financial goals and explore how we can help
-            you achieve them.
+            Join over 100,000 families who've created their estate plans with LDASD.
+            Get started in minutes.
           </p>
           <Link
-            href="/book"
-            className="inline-flex items-center gap-2 rounded-full bg-accent px-8 py-4 text-lg font-semibold text-primary hover:bg-accent-light transition-all"
+            href="/products"
+            className="inline-flex items-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all"
           >
-            Schedule a Consultation
+            View Products & Pricing
           </Link>
         </div>
       </section>

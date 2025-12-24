@@ -4,8 +4,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "LDASD Financial Services | Clarity. Confidence. Financial Peace of Mind.",
-  description: "Personalized financial strategies that protect your legacy and grow your wealth. Retirement planning, investment management, and wealth preservation services.",
+  title: "LDASD Estate Planning | Affordable Trusts & Wills",
+  description: "Protect what matters most with simple, affordable estate planning. Create your trust, will, or complete estate plan online. Attorney-backed, starting at $199.",
 };
 
 export default function RootLayout({

@@ -1,19 +1,19 @@
 import Link from "next/link";
 
 const footerLinks = {
-  services: [
-    { name: "Retirement Planning", href: "/services/retirement-planning" },
-    { name: "Investment Management", href: "/services/investment-management" },
-    { name: "Wealth Preservation", href: "/services/wealth-preservation" },
-    { name: "Tax Strategies", href: "/services/tax-strategies" },
-    { name: "Estate Planning", href: "/services/estate-planning" },
+  products: [
+    { name: "Trust", href: "/products/trust" },
+    { name: "Will", href: "/products/will" },
+    { name: "Guardianship", href: "/products/guardianship" },
+    { name: "Estate Plan", href: "/products/estate-plan" },
+    { name: "Pricing", href: "/pricing" },
   ],
   company: [
     { name: "About Us", href: "/about" },
     { name: "Who We Serve", href: "/who-we-serve" },
-    { name: "Resources", href: "/resources" },
+    { name: "Learn", href: "/learn" },
     { name: "Contact", href: "/contact" },
-    { name: "Book a Call", href: "/book" },
+    { name: "Get Started", href: "/book" },
   ],
   legal: [
     { name: "Privacy Policy", href: "/privacy" },
@@ -32,7 +32,7 @@ export default function Footer() {
               LDASD<span className="text-accent">.</span>
             </Link>
             <p className="text-sm leading-6 text-white/70">
-              Clarity. Confidence. Financial Peace of Mind.
+              Protecting what matters most with simple, affordable estate planning.
             </p>
             <div className="space-y-2 text-sm text-white/70">
               <p>12544 High Bluff Drive</p>
@@ -53,9 +53,9 @@ export default function Footer() {
           <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
             <div className="md:grid md:grid-cols-2 md:gap-8">
               <div>
-                <h3 className="text-sm font-semibold leading-6 text-white">Services</h3>
+                <h3 className="text-sm font-semibold leading-6 text-white">Products</h3>
                 <ul role="list" className="mt-6 space-y-4">
-                  {footerLinks.services.map((item) => (
+                  {footerLinks.products.map((item) => (
                     <li key={item.name}>
                       <Link href={item.href} className="text-sm leading-6 text-white/70 hover:text-accent transition-colors">
                         {item.name}
@@ -94,22 +94,20 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Compliance Disclaimer */}
+        {/* Legal Disclaimer */}
         <div className="mt-12 border-t border-white/10 pt-8">
           <p className="text-xs leading-5 text-white/50">
-            Investment advisory services offered through LDASD Financial Services.
-            Past performance is not indicative of future results. Investing involves risk, including the possible
-            loss of principal. No investment strategy can guarantee a profit or protect against loss in periods
-            of declining values.
+            LDASD Estate Planning provides legal document preparation services. We are not a law firm and do not provide legal advice.
+            For complex estate planning needs, we recommend consulting with a licensed attorney in your state.
           </p>
         </div>
 
         <div className="mt-8 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-xs leading-5 text-white/50">
-            &copy; {new Date().getFullYear()} LDASD Financial Services. All rights reserved.
+            &copy; {new Date().getFullYear()} LDASD Estate Planning. All rights reserved.
           </p>
           <p className="text-xs leading-5 text-white/50 mt-4 md:mt-0">
-            Designed with care for your financial future.
+            Your legacy, simplified.
           </p>
         </div>
       </div>

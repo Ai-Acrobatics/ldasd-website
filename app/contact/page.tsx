@@ -2,8 +2,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | LDASD Financial Services - Sean Gelt",
-  description: "Get in touch with Sean Gelt at LDASD Financial Services in San Diego. Schedule a consultation, ask questions, or learn more about our wealth management services.",
+  title: "Contact Us | LDASD Estate Planning",
+  description: "Have questions about estate planning? Get in touch with our team in San Diego. We're here to help you protect your family.",
 };
 
 export default function ContactPage() {
@@ -23,8 +23,8 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-xl text-white/80 max-w-3xl mx-auto">
-            Have questions? We&apos;re here to help. Reach out and let&apos;s start a conversation
-            about your financial future.
+            Have questions about estate planning? We&apos;re here to help. Reach out and let&apos;s start
+            protecting what matters most.
           </p>
         </div>
       </section>
@@ -102,16 +102,16 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="mt-12 p-6 bg-accent/10 rounded-2xl">
-                <h3 className="font-semibold text-foreground mb-2">Prefer a scheduled call?</h3>
+              <div className="mt-12 p-6 bg-secondary/10 rounded-2xl">
+                <h3 className="font-semibold text-foreground mb-2">Ready to get started?</h3>
                 <p className="text-foreground/70 mb-4">
-                  Book a complimentary 30-minute strategy session at your convenience.
+                  Create your estate plan online in minutes. No appointments necessary.
                 </p>
                 <Link
-                  href="/book"
-                  className="inline-flex items-center gap-2 text-accent font-semibold hover:gap-3 transition-all"
+                  href="/products"
+                  className="inline-flex items-center gap-2 text-secondary font-semibold hover:gap-3 transition-all"
                 >
-                  Schedule a Consultation
+                  View Products & Pricing
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                   </svg>
@@ -186,10 +186,11 @@ export default function ContactPage() {
                     className="w-full px-4 py-3 rounded-lg border border-foreground/20 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors"
                   >
                     <option value="">Select a topic...</option>
-                    <option value="retirement">Retirement Planning</option>
-                    <option value="investment">Investment Management</option>
-                    <option value="tax">Tax Strategies</option>
-                    <option value="estate">Estate Planning</option>
+                    <option value="trust">Living Trust Questions</option>
+                    <option value="will">Will & Guardianship</option>
+                    <option value="estate-plan">Complete Estate Plan</option>
+                    <option value="pricing">Pricing & Products</option>
+                    <option value="support">Technical Support</option>
                     <option value="general">General Inquiry</option>
                   </select>
                 </div>
@@ -204,13 +205,13 @@ export default function ContactPage() {
                     rows={5}
                     required
                     className="w-full px-4 py-3 rounded-lg border border-foreground/20 focus:border-accent focus:ring-1 focus:ring-accent outline-none transition-colors resize-none"
-                    placeholder="Tell us about your financial goals..."
+                    placeholder="Tell us about your estate planning needs..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full rounded-full bg-accent px-8 py-4 text-lg font-semibold text-primary hover:bg-accent-light transition-all"
+                  className="w-full rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all"
                 >
                   Send Message
                 </button>
