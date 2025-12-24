@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const footerLinks = {
   products: [
@@ -28,8 +29,14 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 pb-8 pt-16 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
-            <Link href="/" className="text-2xl font-bold text-white">
-              LDASD<span className="text-secondary">.</span>
+            <Link href="/">
+              <Image
+                src="/images/logo/logo.png"
+                alt="LDASD Estate Planning"
+                width={160}
+                height={58}
+                className="h-14 w-auto"
+              />
             </Link>
             <p className="text-sm leading-6 text-white/70">
               Protecting what matters most with simple, affordable estate planning.

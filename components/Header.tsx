@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const navigation = [
@@ -32,9 +33,14 @@ export default function Header() {
         <div className="flex h-20 items-center justify-between">
           <div className="flex lg:flex-1">
             <Link href="/" className="-m-1.5 p-1.5">
-              <span className="text-xl font-bold text-white">
-                LDASD<span className="text-secondary">.</span>
-              </span>
+              <Image
+                src="/images/logo/logo.png"
+                alt="LDASD Estate Planning"
+                width={140}
+                height={50}
+                className="h-12 w-auto"
+                priority
+              />
             </Link>
           </div>
 
@@ -107,9 +113,13 @@ export default function Header() {
           <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-primary px-6 py-6 sm:max-w-sm shadow-premium">
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5">
-                <span className="text-xl font-bold text-white">
-                  LDASD<span className="text-secondary">.</span>
-                </span>
+                <Image
+                  src="/images/logo/logo.png"
+                  alt="LDASD Estate Planning"
+                  width={120}
+                  height={44}
+                  className="h-10 w-auto"
+                />
               </Link>
               <button
                 type="button"
