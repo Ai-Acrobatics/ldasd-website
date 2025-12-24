@@ -88,70 +88,83 @@ export default function Home() {
   return (
     <div className="bg-background overflow-hidden">
       {/* Hero Section with Carousel */}
-      <section className="relative isolate min-h-[100svh] flex items-center overflow-hidden bg-gradient-to-br from-sand via-ivory to-tan">
-        {/* Warm gradient orbs */}
+      <section className="relative isolate overflow-hidden bg-gradient-to-br from-sand via-ivory to-tan">
+        {/* Warm gradient orbs - smaller on mobile */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] rounded-full bg-secondary/15 blur-[80px] sm:blur-[120px] animate-pulse" />
-          <div className="absolute -bottom-40 -left-40 w-[250px] sm:w-[500px] h-[250px] sm:h-[500px] rounded-full bg-primary/10 blur-[60px] sm:blur-[100px] animate-pulse" style={{ animationDelay: "1s" }} />
+          <div className="absolute -top-20 -right-20 w-[200px] sm:w-[400px] lg:w-[600px] h-[200px] sm:h-[400px] lg:h-[600px] rounded-full bg-secondary/15 blur-[60px] sm:blur-[100px] lg:blur-[120px] animate-pulse" />
+          <div className="absolute -bottom-20 -left-20 w-[150px] sm:w-[300px] lg:w-[500px] h-[150px] sm:h-[300px] lg:h-[500px] rounded-full bg-primary/10 blur-[40px] sm:blur-[80px] lg:blur-[100px] animate-pulse" style={{ animationDelay: "1s" }} />
         </div>
 
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-20 sm:py-24 lg:py-32 lg:px-8 w-full">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            {/* Text Content - Centered on mobile */}
-            <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left order-2 lg:order-1">
-              <div className="mb-6 sm:mb-8 flex justify-center lg:justify-start">
-                <span className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-md px-3 sm:px-4 py-1.5 sm:py-2 text-xs sm:text-sm font-medium text-primary ring-1 ring-primary/20 shadow-glass">
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
+          {/* Mobile Layout: Stacked, compact */}
+          <div className="py-8 sm:py-16 lg:py-24">
+            <div className="grid lg:grid-cols-2 gap-6 sm:gap-10 lg:gap-16 items-center">
+              
+              {/* Hero Image/Carousel - Compact on mobile, shown first */}
+              <div className="relative h-[220px] sm:h-[320px] lg:h-[520px] w-full max-w-sm sm:max-w-md mx-auto lg:max-w-none lg:order-2">
+                <HeroCarousel />
+              </div>
+
+              {/* Text Content */}
+              <div className="max-w-2xl mx-auto lg:mx-0 text-center lg:text-left lg:order-1">
+                {/* Badge - smaller on mobile */}
+                <div className="mb-4 sm:mb-6 flex justify-center lg:justify-start">
+                  <span className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-white/80 backdrop-blur-md px-2.5 sm:px-4 py-1 sm:py-2 text-[11px] sm:text-sm font-medium text-primary ring-1 ring-primary/20 shadow-glass">
+                    <span className="relative flex h-1.5 w-1.5 sm:h-2 sm:w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-1.5 w-1.5 sm:h-2 sm:w-2 bg-secondary"></span>
+                    </span>
+                    Attorney-Backed Estate Planning
                   </span>
-                  Attorney-Backed Estate Planning
-                </span>
+                </div>
+
+                {/* Headline - more compact on mobile */}
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
+                  <span className="block">Protect</span>
+                  <span className="block">What Matters</span>
+                  <span className="block bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+                    Most.
+                  </span>
+                </h1>
+
+                {/* Description - shorter on mobile */}
+                <p className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-xl leading-6 sm:leading-7 lg:leading-8 text-foreground/70 max-w-xl mx-auto lg:mx-0">
+                  Simple, affordable estate planning. Create your trust, will, or complete estate plan online in minutes. <span className="hidden sm:inline">Starting at just $199.</span>
+                </p>
+
+                {/* CTA Buttons - stacked on small mobile */}
+                <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center gap-3 sm:gap-4 justify-center lg:justify-start">
+                  <Link
+                    href="/book"
+                    className="group w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-5 sm:px-8 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white shadow-premium hover:shadow-premium-hover transition-all duration-300 active:scale-[0.98]"
+                  >
+                    <span>Create Your Estate Plan</span>
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                    </svg>
+                  </Link>
+                  <Link
+                    href="/products"
+                    className="inline-flex items-center gap-2 text-primary hover:text-secondary transition-colors font-medium text-sm sm:text-base py-2"
+                  >
+                    View Products & Pricing
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                    </svg>
+                  </Link>
+                </div>
+
+                {/* Mobile-only: Price highlight */}
+                <p className="mt-4 text-xs text-foreground/60 sm:hidden">
+                  Starting at just $199 • Attorney-backed
+                </p>
               </div>
-
-              <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1]">
-                <span className="block">Protect</span>
-                <span className="block">What Matters</span>
-                <span className="block bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
-                  Most.
-                </span>
-              </h1>
-
-              <p className="mt-6 sm:mt-8 text-base sm:text-xl leading-7 sm:leading-8 text-foreground/70 max-w-xl mx-auto lg:mx-0">
-                Simple, affordable estate planning. Create your trust, will, or complete estate plan online in minutes. Starting at just $199.
-              </p>
-
-              <div className="mt-8 sm:mt-12 flex flex-col sm:flex-row items-center lg:items-start gap-4 justify-center lg:justify-start">
-                <Link
-                  href="/book"
-                  className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-6 sm:px-8 py-3.5 sm:py-4 text-base font-semibold text-white shadow-premium hover:shadow-premium-hover transition-all duration-300 active:scale-[0.98]"
-                >
-                  <span>Create Your Estate Plan</span>
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </Link>
-                <Link
-                  href="/products"
-                  className="inline-flex items-center gap-2 text-primary hover:text-secondary transition-colors font-medium py-2"
-                >
-                  View Products & Pricing
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-
-            {/* Hero Carousel - Responsive height */}
-            <div className="relative h-[350px] sm:h-[450px] lg:h-[600px] order-1 lg:order-2 w-full max-w-md mx-auto lg:max-w-none">
-              <HeroCarousel />
             </div>
           </div>
         </div>
 
-        {/* Bottom gradient fade */}
-        <div className="absolute inset-x-0 bottom-0 h-20 sm:h-40 bg-gradient-to-t from-background to-transparent" />
+        {/* Bottom gradient fade - smaller on mobile */}
+        <div className="absolute inset-x-0 bottom-0 h-12 sm:h-20 lg:h-32 bg-gradient-to-t from-background to-transparent" />
       </section>
 
       {/* Trust Indicators */}

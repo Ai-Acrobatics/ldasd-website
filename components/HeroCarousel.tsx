@@ -22,11 +22,12 @@ const carouselImages = [
   },
 ];
 
+// Compact stats for mobile
 const stats = [
-  { label: "Families Protected", value: "100K", suffix: "+" },
-  { label: "States Covered", value: "50", suffix: "" },
-  { label: "Customer Satisfaction", value: "4.9", suffix: "/5" },
-  { label: "Starting Price", value: "$199", suffix: "" },
+  { label: "Families", value: "100K", suffix: "+", fullLabel: "Families Protected" },
+  { label: "States", value: "50", suffix: "", fullLabel: "States Covered" },
+  { label: "Rating", value: "4.9", suffix: "★", fullLabel: "Customer Rating" },
+  { label: "From", value: "$199", suffix: "", fullLabel: "Starting Price" },
 ];
 
 export default function HeroCarousel() {
@@ -41,7 +42,7 @@ export default function HeroCarousel() {
   }, []);
 
   return (
-    <div className="relative h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl">
+    <div className="relative h-full rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg sm:shadow-xl lg:shadow-2xl">
       {/* Carousel Images with Crossfade */}
       {carouselImages.map((image, index) => (
         <div
@@ -56,35 +57,38 @@ export default function HeroCarousel() {
             fill
             className="object-cover"
             priority={index === 0}
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
+            sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 520px"
           />
         </div>
       ))}
 
-      {/* Light Warm Overlay - NOT dark */}
-      <div className="absolute inset-0 bg-gradient-to-t from-secondary/40 via-secondary/10 to-transparent" />
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
 
-      {/* Glass-morphism Stats Cards */}
-      <div className="absolute bottom-0 inset-x-0 p-3 sm:p-4 lg:p-6">
-        <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4">
+      {/* Glass-morphism Stats Cards - More compact on mobile */}
+      <div className="absolute bottom-0 inset-x-0 p-2 sm:p-3 lg:p-5">
+        <div className="grid grid-cols-4 gap-1.5 sm:gap-2 lg:gap-3">
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="text-center p-2 sm:p-3 rounded-lg sm:rounded-xl bg-white/85 backdrop-blur-md shadow-glass border border-white/50"
+              className="text-center py-1.5 px-1 sm:p-2 lg:p-3 rounded-lg sm:rounded-xl bg-white/90 backdrop-blur-md shadow-sm sm:shadow-glass"
             >
-              <p className="text-lg sm:text-2xl lg:text-3xl font-bold text-primary leading-tight">
-                {stat.value}<span className="text-sm sm:text-lg text-secondary">{stat.suffix}</span>
+              <p className="text-sm sm:text-lg lg:text-2xl font-bold text-primary leading-none">
+                {stat.value}<span className="text-xs sm:text-sm text-secondary">{stat.suffix}</span>
               </p>
-              <p className="text-[10px] sm:text-xs text-foreground/70 font-medium leading-tight mt-0.5">{stat.label}</p>
+              <p className="text-[8px] sm:text-[10px] lg:text-xs text-foreground/60 font-medium mt-0.5 leading-tight">
+                <span className="sm:hidden">{stat.label}</span>
+                <span className="hidden sm:inline">{stat.fullLabel}</span>
+              </p>
             </div>
           ))}
         </div>
       </div>
 
-      {/* San Diego Location Badge with Pin Icon */}
-      <div className="absolute top-3 right-3 sm:top-4 sm:right-4 lg:top-6 lg:right-6 flex items-center gap-1.5 sm:gap-2 bg-white/90 backdrop-blur-md text-primary text-xs sm:text-sm font-bold px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-glass border border-white/50">
+      {/* San Diego Location Badge - Smaller on mobile */}
+      <div className="absolute top-2 right-2 sm:top-3 sm:right-3 lg:top-4 lg:right-4 flex items-center gap-1 sm:gap-1.5 bg-white/90 backdrop-blur-md text-primary text-[10px] sm:text-xs lg:text-sm font-semibold px-2 sm:px-3 py-1 sm:py-1.5 rounded-full shadow-sm">
         <svg
-          className="w-3 h-3 sm:w-4 sm:h-4 text-secondary"
+          className="w-2.5 h-2.5 sm:w-3 sm:h-3 lg:w-4 lg:h-4 text-secondary"
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -94,19 +98,20 @@ export default function HeroCarousel() {
             clipRule="evenodd"
           />
         </svg>
-        <span>San Diego Based</span>
+        <span className="hidden sm:inline">San Diego Based</span>
+        <span className="sm:hidden">San Diego</span>
       </div>
 
-      {/* Carousel Indicators */}
-      <div className="absolute bottom-[85px] sm:bottom-28 lg:bottom-32 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2">
+      {/* Carousel Indicators - Repositioned for compact layout */}
+      <div className="absolute bottom-[52px] sm:bottom-[70px] lg:bottom-[90px] left-1/2 -translate-x-1/2 flex gap-1 sm:gap-1.5">
         {carouselImages.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
+            className={`h-1 sm:h-1.5 rounded-full transition-all duration-300 ${
               index === currentIndex
-                ? "bg-white w-5 sm:w-8"
-                : "bg-white/50 hover:bg-white/75 w-1.5 sm:w-2"
+                ? "bg-white w-4 sm:w-6"
+                : "bg-white/50 hover:bg-white/75 w-1 sm:w-1.5"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
