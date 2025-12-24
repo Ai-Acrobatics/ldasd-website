@@ -1,15 +1,76 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
-import type { Metadata } from "next";
+import { useState, FormEvent } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
-export const metadata: Metadata = {
-  title: "Contact Us | LDASD Estate Planning",
-  description: "Have questions about estate planning? Get in touch with our team in San Diego. We're here to help you protect your family.",
-};
+interface FormData {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+}
 
 export default function ContactPage() {
+  const [formData, setFormData] = useState<FormData>({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    subject: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to submit form");
+      }
+
+      setIsSubmitted(true);
+      toast.success("Message sent successfully!");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Something went wrong");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="bg-background">
+      <Toaster position="top-center" />
+
       {/* Hero with San Diego Skyline */}
       <section className="relative py-24 sm:py-32 overflow-hidden">
         <div className="absolute inset-0">
@@ -130,100 +191,142 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-premium hover:shadow-premium-hover transition-all duration-400 ring-1 ring-black/5">
               <h2 className="text-2xl font-bold text-foreground mb-6">Send a Message</h2>
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
-                      First Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      name="firstName"
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-foreground/20 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300"
-                    />
+
+              {isSubmitted ? (
+                <div className="text-center py-12">
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg className="w-8 h-8 text-green-600" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
                   </div>
-                  <div>
-                    <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
-                      Last Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      name="lastName"
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-foreground/20 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-foreground/20 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    className="w-full px-4 py-3 rounded-lg border border-foreground/20 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
-                    Subject *
-                  </label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-foreground/20 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300"
+                  <h3 className="text-xl font-semibold text-foreground mb-2">Message Sent!</h3>
+                  <p className="text-foreground/70 mb-6">Thank you for reaching out. We&apos;ll be in touch soon.</p>
+                  <button
+                    onClick={() => setIsSubmitted(false)}
+                    className="text-secondary font-semibold hover:underline"
                   >
-                    <option value="">Select a topic...</option>
-                    <option value="trust">Living Trust Questions</option>
-                    <option value="will">Will & Guardianship</option>
-                    <option value="estate-plan">Complete Estate Plan</option>
-                    <option value="pricing">Pricing & Products</option>
-                    <option value="support">Technical Support</option>
-                    <option value="general">General Inquiry</option>
-                  </select>
+                    Send another message
+                  </button>
                 </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
+                        First Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="firstName"
+                        name="firstName"
+                        value={formData.firstName}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-foreground/20 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
+                        Last Name *
+                      </label>
+                      <input
+                        type="text"
+                        id="lastName"
+                        name="lastName"
+                        value={formData.lastName}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-foreground/20 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300"
+                      />
+                    </div>
+                  </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                    Message *
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={5}
-                    required
-                    className="w-full px-4 py-3 rounded-lg border border-foreground/20 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300 resize-none"
-                    placeholder="Tell us about your estate planning needs..."
-                  />
-                </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                      Email Address *
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-foreground/20 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300"
+                    />
+                  </div>
 
-                <button
-                  type="submit"
-                  className="w-full rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-secondary-light hover:scale-105 transition-all duration-400 shadow-md hover:shadow-lg"
-                >
-                  Send Message
-                </button>
-              </form>
+                  <div>
+                    <label htmlFor="phone" className="block text-sm font-medium text-foreground mb-2">
+                      Phone Number
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="w-full px-4 py-3 rounded-lg border border-foreground/20 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300"
+                    />
+                  </div>
+
+                  <div>
+                    <label htmlFor="subject" className="block text-sm font-medium text-foreground mb-2">
+                      Subject *
+                    </label>
+                    <select
+                      id="subject"
+                      name="subject"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-foreground/20 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300"
+                    >
+                      <option value="">Select a topic...</option>
+                      <option value="trust">Living Trust Questions</option>
+                      <option value="will">Will & Guardianship</option>
+                      <option value="estate-plan">Complete Estate Plan</option>
+                      <option value="pricing">Pricing & Products</option>
+                      <option value="support">Technical Support</option>
+                      <option value="general">General Inquiry</option>
+                    </select>
+                  </div>
+
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
+                      Message *
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={5}
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      className="w-full px-4 py-3 rounded-lg border border-foreground/20 focus:border-secondary focus:ring-2 focus:ring-secondary/20 outline-none transition-all duration-300 resize-none"
+                      placeholder="Tell us about your estate planning needs..."
+                    />
+                  </div>
+
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-secondary-light hover:scale-105 transition-all duration-400 shadow-md hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                        </svg>
+                        Sending...
+                      </span>
+                    ) : (
+                      "Send Message"
+                    )}
+                  </button>
+                </form>
+              )}
             </div>
           </div>
         </div>
