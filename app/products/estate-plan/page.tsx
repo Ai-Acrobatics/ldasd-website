@@ -1,85 +1,72 @@
-import Link from "next/link";
-import Image from "next/image";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Complete Estate Plan | Trust, Will, POA & Healthcare Directive | $699",
-  description: "Everything you need for complete protection. Living trust, will, power of attorney, healthcare directive, and more. Best value at $699.",
-};
+import Link from "next/link";
+import ProductHeroCarousel from "@/components/ProductHeroCarousel";
+
+const heroImages = [
+  { src: "/images/products/trust-carousel-1.jpg", alt: "Family at Coronado Beach, San Diego" },
+  { src: "/images/products/trust-carousel-2.jpg", alt: "Multi-generational family portrait, San Diego" },
+  { src: "/images/products/trust-carousel-3.jpg", alt: "Parents with children at home, San Diego" },
+  { src: "/images/products/trust-carousel-4.jpg", alt: "Happy couple planning their legacy, San Diego" },
+];
 
 export default function EstatePlanPage() {
   return (
     <div className="bg-background">
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/products/estate-plan-hero.jpg"
-            alt="Multi-generational family gathered together"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary-light/80" />
+      <ProductHeroCarousel images={heroImages}>
+        <span className="inline-block px-4 py-1 rounded-full bg-secondary text-white text-sm font-semibold mb-6 shadow-lg">
+          Best Value
+        </span>
+        <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl">Complete Estate Plan</h1>
+        <p className="mt-6 text-xl text-white/90">
+          Everything you need for comprehensive protection. Trust, will, powers of attorney, healthcare directives, and lifetime updates.
+        </p>
+        <div className="mt-8 flex items-baseline gap-4">
+          <span className="text-5xl font-bold text-secondary">$699</span>
+          <span className="text-white/90">one-time fee</span>
         </div>
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-secondary/20 blur-[120px]" />
+        <p className="mt-4 text-secondary font-semibold bg-white/10 backdrop-blur-sm px-4 py-1 rounded-full inline-block">Save $200+ vs. individual products</p>
+        <div className="mt-8 flex flex-col sm:flex-row gap-4">
+          <Link href="/book" className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl">
+            Get Complete Plan
+            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </Link>
         </div>
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <span className="inline-block px-4 py-1 rounded-full bg-secondary text-white text-sm font-semibold mb-6 shadow-lg">
-                Best Value
-              </span>
-              <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl">Complete Estate Plan</h1>
-              <p className="mt-6 text-xl text-white/90">
-                Everything you need for comprehensive protection. Trust, will, powers of attorney, healthcare directives, and lifetime updates.
-              </p>
-              <div className="mt-8 flex items-baseline gap-4">
-                <span className="text-5xl font-bold text-secondary">$699</span>
-                <span className="text-white/90">one-time fee</span>
+      </ProductHeroCarousel>
+
+      <section className="py-24 bg-sky">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground">Everything Included</h2>
+            <p className="mt-4 text-lg text-foreground/80">Comprehensive protection with all essential documents</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              { icon: "📜", title: "Living Trust & Pour-over Will", description: "Avoid probate and protect your assets" },
+              { icon: "⚖️", title: "Durable Power of Attorney", description: "Financial decision-making authority" },
+              { icon: "🏥", title: "Healthcare Power of Attorney", description: "Medical decision-making authority" },
+              { icon: "💝", title: "Living Will / Healthcare Directive", description: "End-of-life care wishes documented" },
+              { icon: "🔒", title: "HIPAA Authorization", description: "Medical information access granted" },
+              { icon: "👶", title: "Guardianship Designation", description: "Minor children protection specified" },
+              { icon: "💻", title: "Digital Asset Management", description: "Online accounts and assets covered" },
+              { icon: "🏠", title: "Trust Funding Guidance", description: "Step-by-step asset transfer help" },
+              { icon: "👨‍⚖️", title: "Attorney Consultation", description: "Expert legal review included" },
+              { icon: "⭐", title: "Priority Support", description: "Faster response times guaranteed" },
+              { icon: "🔄", title: "Free Unlimited Updates for Life", description: "Change anytime, no extra fees" },
+            ].map((item) => (
+              <div key={item.title} className="bg-white rounded-3xl p-6 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300 text-center">
+                <div className="text-5xl mb-4">{item.icon}</div>
+                <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
+                <p className="text-sm text-foreground/80">{item.description}</p>
               </div>
-              <p className="mt-4 text-secondary font-semibold bg-white/10 backdrop-blur-sm px-4 py-1 rounded-full inline-block">Save $200+ vs. individual products</p>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link href="/book" className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl">
-                  Get Complete Plan
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="rounded-3xl bg-white/10 backdrop-blur-sm p-8 ring-1 ring-white/20 shadow-premium">
-                <h3 className="text-xl font-bold text-white mb-6">Everything Included:</h3>
-                <ul className="space-y-3">
-                  {[
-                    "Living Trust & Pour-over Will",
-                    "Durable Power of Attorney",
-                    "Healthcare Power of Attorney",
-                    "Living Will / Healthcare Directive",
-                    "HIPAA Authorization",
-                    "Guardianship designation",
-                    "Digital asset management",
-                    "Trust funding guidance",
-                    "Attorney consultation",
-                    "Priority support",
-                    "Free unlimited updates for life",
-                  ].map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <svg className="w-6 h-6 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-white/90">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="py-24 bg-sky">
+      <section className="py-24 bg-sand">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground">Complete Protection for Your Family</h2>
@@ -103,7 +90,7 @@ export default function EstatePlanPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-sand">
+      <section className="py-24 bg-sky">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground">Why Choose the Complete Plan?</h2>

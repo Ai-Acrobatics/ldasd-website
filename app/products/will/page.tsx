@@ -1,64 +1,71 @@
-import Link from "next/link";
-import Image from "next/image";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Last Will & Testament | Name Guardians & Distribute Assets | $199",
-  description: "Create your legally binding will online. Name guardians for your children, distribute your assets, and protect your family. Starting at just $199.",
-};
+import Link from "next/link";
+import ProductHeroCarousel from "@/components/ProductHeroCarousel";
+
+const heroImages = [
+  { src: "/images/products/trust-carousel-1.jpg", alt: "Family at Coronado Beach, San Diego" },
+  { src: "/images/products/trust-carousel-2.jpg", alt: "Multi-generational family portrait, San Diego" },
+  { src: "/images/products/trust-carousel-3.jpg", alt: "Parents with children at home, San Diego" },
+  { src: "/images/products/trust-carousel-4.jpg", alt: "Happy couple planning their legacy, San Diego" },
+];
+
+const features = [
+  "Last Will & Testament",
+  "Guardianship designation for minor children",
+  "Asset distribution instructions",
+  "Executor appointment",
+  "Digital asset instructions",
+  "Attorney review included",
+  "Free updates for 1 year",
+  "State-specific legal compliance",
+];
 
 export default function WillPage() {
   return (
     <div className="bg-background">
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/products/will-hero.jpg"
-            alt="Family reviewing documents together"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary-light/80" />
+      <ProductHeroCarousel images={heroImages}>
+        <div className="flex flex-col items-center justify-center h-full text-center px-6 lg:px-8">
+          <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl max-w-4xl">
+            Last Will & Testament
+          </h1>
+          <p className="mt-6 text-xl text-white/90 max-w-2xl">
+            Protect your children and distribute your assets with a legally binding will. The essential first step in estate planning.
+          </p>
+          <div className="mt-8 flex items-baseline gap-4">
+            <span className="text-5xl font-bold text-secondary">$199</span>
+            <span className="text-white/90">one-time fee</span>
+          </div>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4">
+            <Link href="/book" className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl">
+              Create Your Will
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+          </div>
         </div>
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-secondary/20 blur-[120px]" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl">Last Will & Testament</h1>
-              <p className="mt-6 text-xl text-white/90">
-                Protect your children and distribute your assets with a legally binding will. The essential first step in estate planning.
-              </p>
-              <div className="mt-8 flex items-baseline gap-4">
-                <span className="text-5xl font-bold text-secondary">$199</span>
-                <span className="text-white/90">one-time fee</span>
+      </ProductHeroCarousel>
+
+      <section className="py-24 bg-tan">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground">What's Included</h2>
+            <p className="mt-4 text-lg text-foreground/80">Everything you need to protect your family</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature) => (
+              <div key={feature} className="bg-white rounded-3xl p-6 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
+                <div className="flex flex-col items-center text-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+                    <svg className="w-6 h-6 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                    </svg>
+                  </div>
+                  <p className="text-foreground font-medium">{feature}</p>
+                </div>
               </div>
-              <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link href="/book" className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl">
-                  Create Your Will
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-            <div className="relative">
-              <div className="rounded-3xl bg-white/10 backdrop-blur-sm p-8 ring-1 ring-white/20 shadow-premium">
-                <h3 className="text-xl font-bold text-white mb-6">What's Included:</h3>
-                <ul className="space-y-3">
-                  {["Last Will & Testament", "Guardianship designation for minor children", "Asset distribution instructions", "Executor appointment", "Digital asset instructions", "Attorney review included", "Free updates for 1 year", "State-specific legal compliance"].map((feature) => (
-                    <li key={feature} className="flex items-start gap-3">
-                      <svg className="w-6 h-6 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-white/90">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>

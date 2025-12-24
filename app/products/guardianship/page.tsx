@@ -1,47 +1,35 @@
-import Link from "next/link";
-import Image from "next/image";
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "Guardianship Designation | Protect Your Children's Future",
-  description: "Name legal guardians for your minor children. The most important decision in estate planning. Included with all will and trust packages.",
-};
+import Link from "next/link";
+import ProductHeroCarousel from "@/components/ProductHeroCarousel";
+
+const heroImages = [
+  { src: "/images/products/trust-carousel-1.jpg", alt: "Family at Coronado Beach, San Diego" },
+  { src: "/images/products/trust-carousel-2.jpg", alt: "Multi-generational family portrait, San Diego" },
+  { src: "/images/products/trust-carousel-3.jpg", alt: "Parents with children at home, San Diego" },
+  { src: "/images/products/trust-carousel-4.jpg", alt: "Happy couple planning their legacy, San Diego" },
+];
 
 export default function GuardianshipPage() {
   return (
     <div className="bg-background">
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/products/guardianship-hero.jpg"
-            alt="Parents with children in a park"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary-light/80" />
-        </div>
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-secondary/20 blur-[120px]" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center">
-            <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl">Guardianship Designation</h1>
-            <p className="mt-6 text-xl text-white/90">
-              Name who will care for your minor children if something happens to you. The most important decision you'll make as a parent.
-            </p>
-            <p className="mt-4 text-lg text-secondary font-semibold bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full inline-block shadow-lg">Included with all Will and Trust packages</p>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/products/will" className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl">
-                Create Your Will (Includes Guardianship)
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </Link>
-            </div>
+      <ProductHeroCarousel images={heroImages}>
+        <div className="max-w-3xl mx-auto text-center">
+          <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl">Guardianship Designation</h1>
+          <p className="mt-6 text-xl text-white/90">
+            Name who will care for your minor children if something happens to you. The most important decision you'll make as a parent.
+          </p>
+          <p className="mt-4 text-lg text-secondary font-semibold bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full inline-block shadow-lg">Included with all Will and Trust packages</p>
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href="/products/will" className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl">
+              Create Your Will (Includes Guardianship)
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
           </div>
         </div>
-      </section>
+      </ProductHeroCarousel>
 
       <section className="py-24 bg-tan">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
