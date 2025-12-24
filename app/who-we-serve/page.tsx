@@ -18,7 +18,7 @@ const clientTypes = [
       "Creating a financial safety net",
       "Affordable, accessible documents",
     ],
-    icon: "👨‍👩‍👧‍👦",
+    image: "/images/who-we-serve/young-families.png",
   },
   {
     title: "Couples & Married Partners",
@@ -30,7 +30,7 @@ const clientTypes = [
       "Healthcare decision authority",
       "Asset transfer planning",
     ],
-    icon: "💑",
+    image: "/images/who-we-serve/couples.png",
   },
   {
     title: "Homeowners & Property Owners",
@@ -42,7 +42,7 @@ const clientTypes = [
       "Multi-property management",
       "Real estate asset distribution",
     ],
-    icon: "🏡",
+    image: "/images/who-we-serve/homeowners.png",
   },
   {
     title: "Retirees & Pre-Retirees",
@@ -54,7 +54,7 @@ const clientTypes = [
       "Incapacity protection",
       "Multi-generational planning",
     ],
-    icon: "🏖️",
+    image: "/images/who-we-serve/retirees.png",
   },
   {
     title: "Single Parents",
@@ -66,7 +66,7 @@ const clientTypes = [
       "Life insurance integration",
       "Simplified asset distribution",
     ],
-    icon: "👩‍👧",
+    image: "/images/who-we-serve/single-parents.png",
   },
   {
     title: "Pet Owners",
@@ -78,7 +78,7 @@ const clientTypes = [
       "Veterinary care planning",
       "Peace of mind for pet parents",
     ],
-    icon: "🐾",
+    image: "/images/who-we-serve/pet-owners.png",
   },
 ];
 
@@ -126,21 +126,30 @@ export default function WhoWeServePage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             {clientTypes.map((client) => (
-              <div key={client.title} className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 text-center">
-                <span className="text-6xl mb-6 block">{client.icon}</span>
-                <h2 className="text-2xl font-bold text-foreground mb-4">{client.title}</h2>
-                <p className="text-foreground/70 mb-6">{client.description}</p>
-                <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wider text-left">Common Needs:</h3>
-                <ul className="space-y-3 text-left">
-                  {client.needs.map((need) => (
-                    <li key={need} className="flex items-start gap-3">
-                      <svg className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-sm text-foreground/80">{need}</span>
-                    </li>
-                  ))}
-                </ul>
+              <div key={client.title} className="bg-white rounded-3xl overflow-hidden shadow-premium hover:shadow-premium-hover hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300">
+                <div className="relative h-48 w-full">
+                  <Image
+                    src={client.image}
+                    alt={`${client.title} in San Diego`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="p-8 text-center">
+                  <h2 className="text-2xl font-bold text-foreground mb-4">{client.title}</h2>
+                  <p className="text-foreground/70 mb-6">{client.description}</p>
+                  <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wider">Common Needs:</h3>
+                  <ul className="space-y-3">
+                    {client.needs.map((need) => (
+                      <li key={need} className="flex items-center justify-center gap-3">
+                        <svg className="w-5 h-5 text-secondary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-sm text-foreground/80">{need}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             ))}
           </div>
