@@ -68,7 +68,7 @@ export default function BlogPage() {
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
             Financial Insights
           </h1>
-          <p className="text-xl text-white/80 max-w-3xl">
+          <p className="text-xl text-white/90 max-w-3xl">
             Stay informed with our latest thoughts on financial planning, market trends,
             and strategies for building and preserving wealth.
           </p>
@@ -90,7 +90,7 @@ export default function BlogPage() {
                     <span className="text-xs text-foreground/50">{post.date}</span>
                   </div>
                   <h2 className="text-xl font-bold text-foreground mb-2">{post.title}</h2>
-                  <p className="text-foreground/70 text-sm mb-4">{post.excerpt}</p>
+                  <p className="text-foreground/80 text-sm mb-4">{post.excerpt}</p>
                   <span className="inline-flex items-center gap-2 text-accent font-semibold text-sm">
                     Read More
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -110,7 +110,7 @@ export default function BlogPage() {
           <h2 className="text-3xl font-bold text-foreground mb-4">
             Subscribe to Our Newsletter
           </h2>
-          <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-foreground/80 mb-8 max-w-2xl mx-auto">
             Get our latest insights delivered directly to your inbox.
           </p>
           <form className="max-w-md mx-auto flex gap-4">

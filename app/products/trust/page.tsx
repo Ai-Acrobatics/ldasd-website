@@ -30,7 +30,7 @@ export default function TrustPage() {
               </p>
               <div className="mt-8 flex items-baseline gap-4">
                 <span className="text-5xl font-bold text-secondary">$599</span>
-                <span className="text-white/80">one-time fee</span>
+                <span className="text-white/90">one-time fee</span>
               </div>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Link
@@ -86,7 +86,7 @@ export default function TrustPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
             <div>
               <h2 className="text-4xl font-bold text-foreground">Why Choose a Living Trust?</h2>
-              <p className="mt-4 text-lg text-foreground/70">Key benefits that protect your family</p>
+              <p className="mt-4 text-lg text-foreground/80">Key benefits that protect your family</p>
             </div>
             <div className="relative rounded-3xl overflow-hidden shadow-premium">
               <Image
@@ -115,7 +115,7 @@ export default function TrustPage() {
             ].map((benefit) => (
               <div key={benefit.title} className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
                 <h3 className="text-xl font-bold text-foreground mb-3">{benefit.title}</h3>
-                <p className="text-foreground/70">{benefit.description}</p>
+                <p className="text-foreground/80">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -152,7 +152,7 @@ export default function TrustPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
-                <p className="mt-4 text-foreground/70">{faq.a}</p>
+                <p className="mt-4 text-foreground/80">{faq.a}</p>
               </details>
             ))}
           </div>

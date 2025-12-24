@@ -129,7 +129,7 @@ export default function WhoWeServePage() {
                 </div>
                 <div className="p-8 text-center">
                   <h2 className="text-2xl font-bold text-foreground mb-4">{client.title}</h2>
-                  <p className="text-foreground/70 mb-6">{client.description}</p>
+                  <p className="text-foreground/80 mb-6">{client.description}</p>
                   <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wider">Common Needs:</h3>
                   <ul className="space-y-3">
                     {client.needs.map((need) => (
@@ -155,7 +155,7 @@ export default function WhoWeServePage() {
             <h2 className="text-4xl font-bold text-foreground mb-4">
               Why Everyone Needs Estate Planning
             </h2>
-            <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
               Estate planning isn't just for the wealthy. Here's why everyone benefits:
             </p>
           </div>
@@ -181,7 +181,7 @@ export default function WhoWeServePage() {
             ].map((reason) => (
               <div key={reason.title} className="bg-white rounded-2xl p-6 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300 text-center">
                 <h3 className="text-xl font-bold text-primary mb-3">{reason.title}</h3>
-                <p className="text-foreground/70 text-sm">{reason.description}</p>
+                <p className="text-foreground/80 text-sm">{reason.description}</p>
               </div>
             ))}
           </div>
@@ -194,7 +194,7 @@ export default function WhoWeServePage() {
           <h2 className="text-4xl font-bold text-foreground mb-6">
             No Minimum Net Worth Required
           </h2>
-          <p className="text-xl text-foreground/70 mb-8">
+          <p className="text-xl text-foreground/80 mb-8">
             Unlike traditional estate planning attorneys who may require $500K+ in assets,
             we believe everyone deserves quality estate planning. Our products start at just $199.
           </p>
@@ -202,7 +202,7 @@ export default function WhoWeServePage() {
             <p className="text-2xl font-bold text-secondary mb-4">
               "Estate planning for everyone, not just the wealthy."
             </p>
-            <p className="text-foreground/70">
+            <p className="text-foreground/80">
               Whether you have $10,000 or $10,000,000, protecting your family is what matters most.
             </p>
           </div>
@@ -215,7 +215,7 @@ export default function WhoWeServePage() {
           <h2 className="text-4xl font-bold text-white mb-6">
             Ready to Protect What Matters Most?
           </h2>
-          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
             Join over 100,000 families who've created their estate plans with LDASD.
             Starting at just $199.
           </p>

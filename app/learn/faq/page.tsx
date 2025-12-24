@@ -123,7 +123,7 @@ export default function FAQPage() {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                         </svg>
                       </summary>
-                      <p className="mt-4 text-foreground/70 leading-relaxed">{faq.a}</p>
+                      <p className="mt-4 text-foreground/80 leading-relaxed">{faq.a}</p>
                     </details>
                   ))}
                 </div>
@@ -137,7 +137,7 @@ export default function FAQPage() {
       <section className="py-24 bg-primary">
         <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Still Have Questions?</h2>
-          <p className="text-xl text-white/80 mb-10">
+          <p className="text-xl text-white/90 mb-10">
             Schedule a free consultation or start creating your estate plan today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

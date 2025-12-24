@@ -162,7 +162,7 @@ export default function PricingPage() {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <span className="text-sm text-foreground/70">
+                      <span className="text-sm text-foreground/80">
                         {feature}
                       </span>
                     </li>
@@ -173,7 +173,7 @@ export default function PricingPage() {
           </div>
 
           <div className="mt-16 text-center">
-            <p className="text-lg text-foreground/70 mb-4">
+            <p className="text-lg text-foreground/80 mb-4">
               Add your spouse or partner to any plan for +$100
             </p>
             <p className="text-sm text-foreground/50">
@@ -195,7 +195,7 @@ export default function PricingPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
-                <p className="mt-4 text-foreground/70">{faq.a}</p>
+                <p className="mt-4 text-foreground/80">{faq.a}</p>
               </details>
             ))}
           </div>
@@ -205,7 +205,7 @@ export default function PricingPage() {
       <section className="py-24 bg-primary">
         <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
-          <p className="text-xl text-white/80 mb-10">
+          <p className="text-xl text-white/90 mb-10">
             Choose your plan and protect your family today. No appointments necessary.
           </p>
           <Link href="/book" className="inline-flex items-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all">

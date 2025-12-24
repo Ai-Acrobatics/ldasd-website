@@ -79,7 +79,7 @@ export default function BlogPage() {
                 <h2 className="text-2xl font-bold text-foreground mb-3 hover:text-primary transition-colors">
                   {post.title}
                 </h2>
-                <p className="text-foreground/70 mb-6">{post.excerpt}</p>
+                <p className="text-foreground/80 mb-6">{post.excerpt}</p>
                 <div className="flex items-center justify-between text-sm text-foreground/50">
                   <span>{post.date}</span>
                   <span>{post.readTime}</span>
@@ -103,7 +103,7 @@ export default function BlogPage() {
       <section className="py-24 bg-primary">
         <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Create Your Estate Plan?</h2>
-          <p className="text-xl text-white/80 mb-10">
+          <p className="text-xl text-white/90 mb-10">
             Stop reading, start protecting. Create your estate plan today.
           </p>
           <Link

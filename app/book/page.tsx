@@ -223,7 +223,7 @@ export default function BookPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">{item.title}</h3>
-                      <p className="text-foreground/70">{item.description}</p>
+                      <p className="text-foreground/80">{item.description}</p>
                     </div>
                   </div>
                 ))}
@@ -231,7 +231,7 @@ export default function BookPage() {
 
               <div className="mt-12 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-premium">
                 <h3 className="font-semibold text-foreground mb-2">100% Satisfaction Guaranteed</h3>
-                <p className="text-foreground/70">
+                <p className="text-foreground/80">
                   Not happy with your documents? We offer a 60-day money-back guarantee, no questions asked.
                 </p>
               </div>
@@ -253,7 +253,7 @@ export default function BookPage() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-semibold text-foreground mb-2">Request Submitted!</h3>
-                  <p className="text-foreground/70 mb-6">
+                  <p className="text-foreground/80 mb-6">
                     Thank you for choosing LDASD Estate Planning. We&apos;ll contact you shortly to get started
                     on your {getSelectedProduct()?.name || "estate plan"}.
                   </p>
@@ -300,7 +300,7 @@ export default function BookPage() {
                           <div className="flex items-center justify-between">
                             <div>
                               <p className="font-semibold text-foreground">{product.name}</p>
-                              <p className="text-sm text-foreground/70">{product.description}</p>
+                              <p className="text-sm text-foreground/80">{product.description}</p>
                             </div>
                             <div className="text-right">
                               <p className="text-xl font-bold text-primary">${product.price}</p>
@@ -406,7 +406,7 @@ export default function BookPage() {
                         onChange={handleChange}
                         className="mt-1 accent-secondary"
                       />
-                      <label htmlFor="addSpouse" className="text-sm text-foreground/70">
+                      <label htmlFor="addSpouse" className="text-sm text-foreground/80">
                         I want to add my spouse/partner (+$100)
                       </label>
                     </div>

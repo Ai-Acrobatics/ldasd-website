@@ -86,7 +86,7 @@ export default function GuidesPage() {
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
             Free Financial Guides
           </h1>
-          <p className="text-xl text-white/80 max-w-3xl">
+          <p className="text-xl text-white/90 max-w-3xl">
             Download our comprehensive guides to help you make informed financial decisions.
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function GuidesPage() {
                   {guide.category}
                 </span>
                 <h2 className="text-xl font-bold text-foreground mt-2 mb-3">{guide.title}</h2>
-                <p className="text-foreground/70 text-sm mb-6">{guide.description}</p>
+                <p className="text-foreground/80 text-sm mb-6">{guide.description}</p>
                 <button className="inline-flex items-center gap-2 text-accent font-semibold text-sm hover:gap-3 transition-all">
                   Download Guide
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -122,7 +122,7 @@ export default function GuidesPage() {
           <h2 className="text-3xl font-bold text-white mb-6">
             Want Personalized Guidance?
           </h2>
-          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
             Guides are helpful, but nothing beats personalized advice for your unique situation.
             Schedule a consultation to discuss your specific needs.
           </p>

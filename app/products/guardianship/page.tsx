@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,10 +10,19 @@ export const metadata: Metadata = {
 export default function GuardianshipPage() {
   return (
     <div className="bg-background">
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary to-primary-light overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/products/guardianship-hero.jpg"
+            alt="Parents with children in a park"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary-light/80" />
+        </div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-secondary/20 blur-[120px]" />
-          <div className="absolute inset-0 bg-white/5" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="max-w-3xl mx-auto text-center">
@@ -37,7 +47,7 @@ export default function GuardianshipPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground">Why Guardianship Matters</h2>
-            <p className="mt-4 text-lg text-foreground/70">Don't leave this critical decision to chance</p>
+            <p className="mt-4 text-lg text-foreground/80">Don't leave this critical decision to chance</p>
           </div>
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {[
@@ -48,7 +58,7 @@ export default function GuardianshipPage() {
             ].map((benefit) => (
               <div key={benefit.title} className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
                 <h3 className="text-xl font-bold text-foreground mb-3">{benefit.title}</h3>
-                <p className="text-foreground/70">{benefit.description}</p>
+                <p className="text-foreground/80">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -61,23 +71,23 @@ export default function GuardianshipPage() {
           <div className="bg-white rounded-3xl p-8 shadow-premium space-y-6">
             <div>
               <h3 className="font-bold text-foreground mb-2">Age & Health</h3>
-              <p className="text-foreground/70">Choose guardians young enough to raise your children to adulthood and in good health.</p>
+              <p className="text-foreground/80">Choose guardians young enough to raise your children to adulthood and in good health.</p>
             </div>
             <div>
               <h3 className="font-bold text-foreground mb-2">Values & Lifestyle</h3>
-              <p className="text-foreground/70">Select guardians who share your values, parenting style, and can provide a stable home.</p>
+              <p className="text-foreground/80">Select guardians who share your values, parenting style, and can provide a stable home.</p>
             </div>
             <div>
               <h3 className="font-bold text-foreground mb-2">Financial Stability</h3>
-              <p className="text-foreground/70">While you can leave assets to support your children, guardians should be financially responsible.</p>
+              <p className="text-foreground/80">While you can leave assets to support your children, guardians should be financially responsible.</p>
             </div>
             <div>
               <h3 className="font-bold text-foreground mb-2">Location</h3>
-              <p className="text-foreground/70">Consider whether you want your children to stay in the same area or if relocation is acceptable.</p>
+              <p className="text-foreground/80">Consider whether you want your children to stay in the same area or if relocation is acceptable.</p>
             </div>
             <div>
               <h3 className="font-bold text-foreground mb-2">Willingness to Serve</h3>
-              <p className="text-foreground/70">Always discuss your decision with potential guardians before naming them.</p>
+              <p className="text-foreground/80">Always discuss your decision with potential guardians before naming them.</p>
             </div>
           </div>
         </div>

@@ -116,7 +116,7 @@ export default function Home() {
                 </span>
               </h1>
 
-              <p className="mt-8 text-xl leading-8 text-foreground/70 max-w-xl">
+              <p className="mt-8 text-xl leading-8 text-foreground/80 max-w-xl">
                 Simple, affordable estate planning. Create your trust, will, or complete estate plan online in minutes. Starting at just $199.
               </p>
 
@@ -177,11 +177,11 @@ export default function Home() {
               <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
                 Have You Thought About What Happens Next?
               </h2>
-              <p className="mt-6 text-lg leading-8 text-foreground/70">
+              <p className="mt-6 text-lg leading-8 text-foreground/80">
                 Most people think estate planning is only for the wealthy. The truth? If you have loved ones,
                 assets to protect, or minor children, you need an estate plan.
               </p>
-              <p className="mt-4 text-lg leading-8 text-foreground/70">
+              <p className="mt-4 text-lg leading-8 text-foreground/80">
                 Without proper planning, the state decides what happens to your assets and who cares for your
                 children. Your family faces lengthy probate, costly legal fees, and unnecessary stress during
                 an already difficult time.
@@ -224,7 +224,7 @@ export default function Home() {
                 <div className="absolute bottom-6 left-6 right-6">
                   <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 text-center">
                     <p className="text-xl font-bold text-foreground">Your Family&apos;s Future</p>
-                    <p className="text-foreground/70">Protected. Secured. Simplified.</p>
+                    <p className="text-foreground/80">Protected. Secured. Simplified.</p>
                   </div>
                 </div>
               </div>
@@ -250,7 +250,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               Choose What's Right for You
             </h2>
-            <p className="mt-6 text-lg leading-8 text-foreground/70">
+            <p className="mt-6 text-lg leading-8 text-foreground/80">
               From basic wills to comprehensive estate plans, we have everything you need to protect your legacy.
             </p>
           </div>
@@ -276,7 +276,7 @@ export default function Home() {
                     {product.name}
                   </h3>
 
-                  <p className="text-foreground/70 leading-relaxed mb-6">
+                  <p className="text-foreground/80 leading-relaxed mb-6">
                     {product.description}
                   </p>
 
@@ -321,7 +321,7 @@ export default function Home() {
             <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               What Our Families Say
             </h2>
-            <p className="mt-6 text-lg leading-8 text-foreground/70">
+            <p className="mt-6 text-lg leading-8 text-foreground/80">
               Join thousands of families who've protected what matters most.
             </p>
           </div>
@@ -397,7 +397,7 @@ export default function Home() {
                 </Link>
               </div>
 
-              <p className="mt-8 text-sm text-white/70">
+              <p className="mt-8 text-sm text-white/80">
                 Starting at $199. 100% satisfaction guaranteed. Update anytime.
               </p>
             </div>

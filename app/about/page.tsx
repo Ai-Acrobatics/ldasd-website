@@ -52,7 +52,7 @@ export default function AboutPage() {
           <h1 className="text-4xl font-bold tracking-tight text-primary sm:text-6xl mb-6">
             Making Estate Planning Simple
           </h1>
-          <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             We believe everyone deserves access to quality estate planning, not just the wealthy.
             That&apos;s why we&apos;ve made it affordable, accessible, and easy to protect what matters most.
           </p>
@@ -70,17 +70,17 @@ export default function AboutPage() {
               <h2 className="text-4xl font-bold tracking-tight text-foreground mb-6">
                 Our Mission
               </h2>
-              <p className="text-lg text-foreground/70 mb-4">
+              <p className="text-lg text-foreground/80 mb-4">
                 At LDASD Estate Planning, we believe protecting your family shouldn't require thousands
                 of dollars in legal fees or weeks of complicated paperwork. That's why we created a platform
                 that makes estate planning simple, affordable, and accessible to everyone.
               </p>
-              <p className="text-lg text-foreground/70 mb-4">
+              <p className="text-lg text-foreground/80 mb-4">
                 Our team combines legal expertise with modern technology to deliver attorney-backed estate
                 planning documents at a fraction of traditional costs. Based in San Diego, California, we serve
                 families in all 50 states with state-specific, legally compliant documents.
               </p>
-              <p className="text-lg text-foreground/70 mb-6">
+              <p className="text-lg text-foreground/80 mb-6">
                 Whether you need a simple will to name guardians for your children, a living trust to avoid
                 probate, or a complete estate plan with healthcare directives, we're here to help you protect
                 what matters most—affordably and easily.
@@ -136,7 +136,7 @@ export default function AboutPage() {
             {values.map((value) => (
               <div key={value.title} className="bg-white rounded-2xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 hover:scale-105 transition-all duration-400 ring-1 ring-black/5">
                 <h3 className="text-xl font-bold text-primary mb-3">{value.title}</h3>
-                <p className="text-foreground/70">{value.description}</p>
+                <p className="text-foreground/80">{value.description}</p>
               </div>
             ))}
           </div>
@@ -162,7 +162,7 @@ export default function AboutPage() {
                 <div key={item.year} className={`flex items-center gap-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
                   <div className={`flex-1 ${index % 2 === 0 ? 'text-right' : 'text-left'}`}>
                     <span className="text-secondary font-bold text-xl">{item.year}</span>
-                    <p className="text-foreground/70 mt-1">{item.event}</p>
+                    <p className="text-foreground/80 mt-1">{item.event}</p>
                   </div>
                   <div className="w-4 h-4 rounded-full bg-secondary ring-4 ring-secondary/20 z-10 hover:scale-150 transition-all duration-300" />
                   <div className="flex-1" />
@@ -185,7 +185,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-white mb-6">
             Ready to Protect Your Family?
           </h2>
-          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
             Join over 100,000 families who've created their estate plans with LDASD.
             Get started in minutes.
           </p>

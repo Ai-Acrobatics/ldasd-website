@@ -117,7 +117,7 @@ export default function FAQPage() {
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
             Frequently Asked Questions
           </h1>
-          <p className="text-xl text-white/80 max-w-3xl">
+          <p className="text-xl text-white/90 max-w-3xl">
             Find answers to common questions about our services, approach, and what
             it&apos;s like to work with LDASD Financial.
           </p>
@@ -136,7 +136,7 @@ export default function FAQPage() {
                 {section.questions.map((faq) => (
                   <div key={faq.q}>
                     <h3 className="text-lg font-semibold text-foreground mb-2">{faq.q}</h3>
-                    <p className="text-foreground/70">{faq.a}</p>
+                    <p className="text-foreground/80">{faq.a}</p>
                   </div>
                 ))}
               </div>
@@ -151,7 +151,7 @@ export default function FAQPage() {
           <h2 className="text-3xl font-bold text-white mb-6">
             Have More Questions?
           </h2>
-          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
             Schedule a complimentary consultation to discuss your specific questions
             and learn how we can help.
           </p>

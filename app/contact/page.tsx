@@ -118,7 +118,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Office Address</h3>
-                    <p className="text-foreground/70">
+                    <p className="text-foreground/80">
                       12544 High Bluff Drive<br />
                       Suite 200<br />
                       San Diego, California 92130
@@ -134,7 +134,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                    <p className="text-foreground/70">
+                    <p className="text-foreground/80">
                       <a href="tel:+18587506206" className="hover:text-secondary transition-all duration-300">(858) 750-6206</a>
                     </p>
                   </div>
@@ -148,7 +148,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                    <p className="text-foreground/70">
+                    <p className="text-foreground/80">
                       <a href="mailto:sean@ldasd.com" className="hover:text-secondary transition-all duration-300">sean@ldasd.com</a>
                     </p>
                   </div>
@@ -162,7 +162,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Office Hours</h3>
-                    <p className="text-foreground/70">
+                    <p className="text-foreground/80">
                       Monday - Friday: 9:00 AM - 5:00 PM<br />
                       Saturday: By appointment<br />
                       Sunday: Closed
@@ -173,7 +173,7 @@ export default function ContactPage() {
 
               <div className="mt-12 p-6 bg-gradient-to-br from-secondary/10 to-primary/10 rounded-2xl shadow-premium hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-400">
                 <h3 className="font-semibold text-foreground mb-2">Ready to get started?</h3>
-                <p className="text-foreground/70 mb-4">
+                <p className="text-foreground/80 mb-4">
                   Create your estate plan online in minutes. No appointments necessary.
                 </p>
                 <Link
@@ -200,7 +200,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <h3 className="text-xl font-semibold text-foreground mb-2">Message Sent!</h3>
-                  <p className="text-foreground/70 mb-6">Thank you for reaching out. We&apos;ll be in touch soon.</p>
+                  <p className="text-foreground/80 mb-6">Thank you for reaching out. We&apos;ll be in touch soon.</p>
                   <button
                     onClick={() => setIsSubmitted(false)}
                     className="text-secondary font-semibold hover:underline"

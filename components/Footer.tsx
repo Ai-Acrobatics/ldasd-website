@@ -38,10 +38,10 @@ export default function Footer() {
                 className="h-14 w-auto"
               />
             </Link>
-            <p className="text-sm leading-6 text-white/70">
+            <p className="text-sm leading-6 text-white/80">
               Protecting what matters most with simple, affordable estate planning.
             </p>
-            <div className="space-y-2 text-sm text-white/70">
+            <div className="space-y-2 text-sm text-white/80">
               <p>12544 High Bluff Drive</p>
               <p>Suite 200</p>
               <p>San Diego, California 92130</p>
@@ -64,7 +64,7 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {footerLinks.products.map((item) => (
                     <li key={item.name}>
-                      <Link href={item.href} className="text-sm leading-6 text-white/70 hover:text-secondary transition-all duration-300">
+                      <Link href={item.href} className="text-sm leading-6 text-white/80 hover:text-secondary transition-all duration-300">
                         {item.name}
                       </Link>
                     </li>
@@ -76,7 +76,7 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {footerLinks.company.map((item) => (
                     <li key={item.name}>
-                      <Link href={item.href} className="text-sm leading-6 text-white/70 hover:text-secondary transition-all duration-300">
+                      <Link href={item.href} className="text-sm leading-6 text-white/80 hover:text-secondary transition-all duration-300">
                         {item.name}
                       </Link>
                     </li>
@@ -90,7 +90,7 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {footerLinks.legal.map((item) => (
                     <li key={item.name}>
-                      <Link href={item.href} className="text-sm leading-6 text-white/70 hover:text-secondary transition-all duration-300">
+                      <Link href={item.href} className="text-sm leading-6 text-white/80 hover:text-secondary transition-all duration-300">
                         {item.name}
                       </Link>
                     </li>

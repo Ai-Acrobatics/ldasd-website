@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,10 +10,19 @@ export const metadata: Metadata = {
 export default function WillPage() {
   return (
     <div className="bg-background">
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary to-primary-light overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/products/will-hero.jpg"
+            alt="Family reviewing documents together"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary-light/80" />
+        </div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-secondary/20 blur-[120px]" />
-          <div className="absolute inset-0 bg-white/5" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -23,7 +33,7 @@ export default function WillPage() {
               </p>
               <div className="mt-8 flex items-baseline gap-4">
                 <span className="text-5xl font-bold text-secondary">$199</span>
-                <span className="text-white/80">one-time fee</span>
+                <span className="text-white/90">one-time fee</span>
               </div>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Link href="/book" className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl">
@@ -57,7 +67,7 @@ export default function WillPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground">Why You Need a Will</h2>
-            <p className="mt-4 text-lg text-foreground/70">Essential protection for your family</p>
+            <p className="mt-4 text-lg text-foreground/80">Essential protection for your family</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -67,7 +77,7 @@ export default function WillPage() {
             ].map((benefit) => (
               <div key={benefit.title} className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
                 <h3 className="text-xl font-bold text-foreground mb-3">{benefit.title}</h3>
-                <p className="text-foreground/70">{benefit.description}</p>
+                <p className="text-foreground/80">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -90,7 +100,7 @@ export default function WillPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
-                <p className="mt-4 text-foreground/70">{faq.a}</p>
+                <p className="mt-4 text-foreground/80">{faq.a}</p>
               </details>
             ))}
           </div>

@@ -167,7 +167,7 @@ export default function ProductsPage() {
                   <h3 className="text-2xl font-bold text-foreground">
                     {product.name}
                   </h3>
-                  <p className="mt-2 text-sm text-foreground/70">
+                  <p className="mt-2 text-sm text-foreground/80">
                     {product.description}
                   </p>
                   <div className="mt-6 flex items-baseline gap-x-2">
@@ -230,7 +230,7 @@ export default function ProductsPage() {
             <h2 className="text-4xl font-bold tracking-tight text-foreground">
               Compare Products
             </h2>
-            <p className="mt-4 text-lg text-foreground/70">
+            <p className="mt-4 text-lg text-foreground/80">
               See which features are included in each plan
             </p>
           </div>

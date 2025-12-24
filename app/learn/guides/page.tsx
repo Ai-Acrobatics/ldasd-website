@@ -107,7 +107,7 @@ export default function GuidesPage() {
                   <span className="text-sm text-foreground/50">{guide.pages}</span>
                 </div>
                 <h2 className="text-2xl font-bold text-foreground mb-3">{guide.title}</h2>
-                <p className="text-foreground/70 mb-6">{guide.description}</p>
+                <p className="text-foreground/80 mb-6">{guide.description}</p>
                 <button className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-secondary text-white font-semibold hover:bg-secondary/90 shadow-premium transition-all">
                   Download Free
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -127,7 +127,7 @@ export default function GuidesPage() {
             <h2 className="text-3xl font-bold text-foreground mb-4">
               Complete Estate Planning Toolkit
             </h2>
-            <p className="text-lg text-foreground/70 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/80 mb-8 max-w-2xl mx-auto">
               Get all our guides, checklists, and templates in one comprehensive download. Everything you need to organize your estate planning from start to finish.
             </p>
             <button className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-secondary text-white text-lg font-semibold hover:bg-secondary/90 shadow-premium hover:shadow-premium-hover transition-all">
@@ -144,7 +144,7 @@ export default function GuidesPage() {
       <section className="py-24 bg-primary">
         <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Create Your Estate Plan?</h2>
-          <p className="text-xl text-white/80 mb-10">
+          <p className="text-xl text-white/90 mb-10">
             You've got the knowledge. Now take action and protect your family.
           </p>
           <Link

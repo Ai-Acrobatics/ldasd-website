@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,10 +10,19 @@ export const metadata: Metadata = {
 export default function EstatePlanPage() {
   return (
     <div className="bg-background">
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary to-primary-light overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/products/estate-plan-hero.jpg"
+            alt="Multi-generational family gathered together"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/80 via-primary/70 to-primary-light/80" />
+        </div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-secondary/20 blur-[120px]" />
-          <div className="absolute inset-0 bg-white/5" />
         </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -26,7 +36,7 @@ export default function EstatePlanPage() {
               </p>
               <div className="mt-8 flex items-baseline gap-4">
                 <span className="text-5xl font-bold text-secondary">$699</span>
-                <span className="text-white/80">one-time fee</span>
+                <span className="text-white/90">one-time fee</span>
               </div>
               <p className="mt-4 text-secondary font-semibold bg-white/10 backdrop-blur-sm px-4 py-1 rounded-full inline-block">Save $200+ vs. individual products</p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
@@ -73,7 +83,7 @@ export default function EstatePlanPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground">Complete Protection for Your Family</h2>
-            <p className="mt-4 text-lg text-foreground/70">Six essential documents in one comprehensive package</p>
+            <p className="mt-4 text-lg text-foreground/80">Six essential documents in one comprehensive package</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -86,7 +96,7 @@ export default function EstatePlanPage() {
             ].map((doc) => (
               <div key={doc.title} className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
                 <h3 className="text-xl font-bold text-foreground mb-3">{doc.title}</h3>
-                <p className="text-foreground/70">{doc.description}</p>
+                <p className="text-foreground/80">{doc.description}</p>
               </div>
             ))}
           </div>
@@ -101,19 +111,19 @@ export default function EstatePlanPage() {
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
               <h3 className="text-xl font-bold text-primary mb-4">Best Value</h3>
-              <p className="text-foreground/70 mb-4">Save over $200 compared to purchasing documents individually. One comprehensive package at one great price.</p>
+              <p className="text-foreground/80 mb-4">Save over $200 compared to purchasing documents individually. One comprehensive package at one great price.</p>
             </div>
             <div className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
               <h3 className="text-xl font-bold text-primary mb-4">Lifetime Updates</h3>
-              <p className="text-foreground/70 mb-4">Life changes. Update your documents anytime, free forever. Marriage, divorce, new children, moves - we've got you covered.</p>
+              <p className="text-foreground/80 mb-4">Life changes. Update your documents anytime, free forever. Marriage, divorce, new children, moves - we've got you covered.</p>
             </div>
             <div className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
               <h3 className="text-xl font-bold text-primary mb-4">Complete Protection</h3>
-              <p className="text-foreground/70 mb-4">Cover every scenario: death, incapacity, medical decisions, and asset distribution. Nothing left to chance.</p>
+              <p className="text-foreground/80 mb-4">Cover every scenario: death, incapacity, medical decisions, and asset distribution. Nothing left to chance.</p>
             </div>
             <div className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
               <h3 className="text-xl font-bold text-primary mb-4">Priority Support</h3>
-              <p className="text-foreground/70 mb-4">Get faster response times and direct access to our estate planning specialists whenever you need help.</p>
+              <p className="text-foreground/80 mb-4">Get faster response times and direct access to our estate planning specialists whenever you need help.</p>
             </div>
           </div>
         </div>
