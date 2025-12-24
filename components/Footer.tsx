@@ -29,7 +29,7 @@ export default function Footer() {
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8">
             <Link href="/" className="text-2xl font-bold text-white">
-              LDASD<span className="text-accent">.</span>
+              LDASD<span className="text-secondary">.</span>
             </Link>
             <p className="text-sm leading-6 text-white/70">
               Protecting what matters most with simple, affordable estate planning.
@@ -39,12 +39,12 @@ export default function Footer() {
               <p>Suite 200</p>
               <p>San Diego, California 92130</p>
               <p className="pt-2">
-                <a href="tel:+18587506206" className="hover:text-accent transition-colors">
+                <a href="tel:+18587506206" className="hover:text-secondary transition-all duration-300">
                   (858) 750-6206
                 </a>
               </p>
               <p>
-                <a href="mailto:sean@ldasd.com" className="hover:text-accent transition-colors">
+                <a href="mailto:sean@ldasd.com" className="hover:text-secondary transition-all duration-300">
                   sean@ldasd.com
                 </a>
               </p>
@@ -57,7 +57,7 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {footerLinks.products.map((item) => (
                     <li key={item.name}>
-                      <Link href={item.href} className="text-sm leading-6 text-white/70 hover:text-accent transition-colors">
+                      <Link href={item.href} className="text-sm leading-6 text-white/70 hover:text-secondary transition-all duration-300">
                         {item.name}
                       </Link>
                     </li>
@@ -69,7 +69,7 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {footerLinks.company.map((item) => (
                     <li key={item.name}>
-                      <Link href={item.href} className="text-sm leading-6 text-white/70 hover:text-accent transition-colors">
+                      <Link href={item.href} className="text-sm leading-6 text-white/70 hover:text-secondary transition-all duration-300">
                         {item.name}
                       </Link>
                     </li>
@@ -83,7 +83,7 @@ export default function Footer() {
                 <ul role="list" className="mt-6 space-y-4">
                   {footerLinks.legal.map((item) => (
                     <li key={item.name}>
-                      <Link href={item.href} className="text-sm leading-6 text-white/70 hover:text-accent transition-colors">
+                      <Link href={item.href} className="text-sm leading-6 text-white/70 hover:text-secondary transition-all duration-300">
                         {item.name}
                       </Link>
                     </li>

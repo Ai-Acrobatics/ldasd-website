@@ -7,18 +7,18 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="bg-background">
+    <div className="bg-sand">
       {/* Hero */}
-      <section className="relative py-24 sm:py-32 bg-gradient-to-br from-primary via-primary-dark to-primary overflow-hidden">
+      <section className="relative py-24 sm:py-32 bg-gradient-to-br from-sage to-sky overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-accent/20 blur-[100px]" />
+          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-secondary/20 blur-[100px]" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl mb-6">
+          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl mb-6">
             Privacy Policy
           </h1>
-          <p className="text-xl text-white/80">
+          <p className="text-xl text-foreground/80">
             Last updated: December 2024
           </p>
         </div>
@@ -110,7 +110,7 @@ export default function PrivacyPage() {
               <p>
                 If you have questions about this Privacy Policy, please contact us at:
               </p>
-              <div className="mt-4 p-6 bg-primary/5 rounded-xl">
+              <div className="mt-4 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-premium">
                 <p className="font-semibold text-foreground">LDASD Financial Services</p>
                 <p>12544 High Bluff Drive, Suite 200</p>
                 <p>San Diego, California 92130</p>

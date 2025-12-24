@@ -9,24 +9,28 @@ export const metadata: Metadata = {
 export default function EstatePlanPage() {
   return (
     <div className="bg-background">
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary to-primary-light overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-secondary/20 blur-[120px]" />
+          <div className="absolute inset-0 bg-white/5" />
+        </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block px-4 py-1 rounded-full bg-secondary/20 text-secondary text-sm font-semibold mb-6">
+              <span className="inline-block px-4 py-1 rounded-full bg-secondary text-white text-sm font-semibold mb-6 shadow-lg">
                 Best Value
               </span>
               <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl">Complete Estate Plan</h1>
-              <p className="mt-6 text-xl text-white/80">
+              <p className="mt-6 text-xl text-white/90">
                 Everything you need for comprehensive protection. Trust, will, powers of attorney, healthcare directives, and lifetime updates.
               </p>
               <div className="mt-8 flex items-baseline gap-4">
-                <span className="text-5xl font-bold text-white">$699</span>
-                <span className="text-white/70">one-time fee</span>
+                <span className="text-5xl font-bold text-secondary">$699</span>
+                <span className="text-white/80">one-time fee</span>
               </div>
-              <p className="mt-4 text-secondary font-semibold">Save $200+ vs. individual products</p>
+              <p className="mt-4 text-secondary font-semibold bg-white/10 backdrop-blur-sm px-4 py-1 rounded-full inline-block">Save $200+ vs. individual products</p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                <Link href="/book" className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all">
+                <Link href="/book" className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl">
                   Get Complete Plan
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
@@ -35,7 +39,7 @@ export default function EstatePlanPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="rounded-3xl bg-white/10 backdrop-blur-sm p-8 ring-1 ring-white/20">
+              <div className="rounded-3xl bg-white/10 backdrop-blur-sm p-8 ring-1 ring-white/20 shadow-premium">
                 <h3 className="text-xl font-bold text-white mb-6">Everything Included:</h3>
                 <ul className="space-y-3">
                   {[
@@ -65,7 +69,7 @@ export default function EstatePlanPage() {
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-24 bg-sky">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground">Complete Protection for Your Family</h2>
@@ -80,7 +84,7 @@ export default function EstatePlanPage() {
               { title: "Living Will", description: "Document your end-of-life care wishes and relieve your family of difficult decisions." },
               { title: "HIPAA Authorization", description: "Ensure your designated agents can access your medical information." },
             ].map((doc) => (
-              <div key={doc.title} className="bg-white rounded-2xl p-8 shadow-lg">
+              <div key={doc.title} className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
                 <h3 className="text-xl font-bold text-foreground mb-3">{doc.title}</h3>
                 <p className="text-foreground/70">{doc.description}</p>
               </div>
@@ -89,25 +93,25 @@ export default function EstatePlanPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-primary/5">
+      <section className="py-24 bg-sand">
         <div className="mx-auto max-w-5xl px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-foreground">Why Choose the Complete Plan?</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <div className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
               <h3 className="text-xl font-bold text-primary mb-4">Best Value</h3>
               <p className="text-foreground/70 mb-4">Save over $200 compared to purchasing documents individually. One comprehensive package at one great price.</p>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <div className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
               <h3 className="text-xl font-bold text-primary mb-4">Lifetime Updates</h3>
               <p className="text-foreground/70 mb-4">Life changes. Update your documents anytime, free forever. Marriage, divorce, new children, moves - we've got you covered.</p>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <div className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
               <h3 className="text-xl font-bold text-primary mb-4">Complete Protection</h3>
               <p className="text-foreground/70 mb-4">Cover every scenario: death, incapacity, medical decisions, and asset distribution. Nothing left to chance.</p>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-lg">
+            <div className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
               <h3 className="text-xl font-bold text-primary mb-4">Priority Support</h3>
               <p className="text-foreground/70 mb-4">Get faster response times and direct access to our estate planning specialists whenever you need help.</p>
             </div>
@@ -115,13 +119,16 @@ export default function EstatePlanPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-primary">
-        <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
+      <section className="relative py-24 bg-gradient-to-br from-primary to-primary-light overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-secondary/20 blur-[120px]" />
+        </div>
+        <div className="relative mx-auto max-w-3xl px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Complete Peace of Mind, One Simple Price</h2>
-          <p className="text-xl text-white/80 mb-10">
+          <p className="text-xl text-white/90 mb-10">
             Get every document you need to protect your family and assets. Free lifetime updates included.
           </p>
-          <Link href="/book" className="inline-flex items-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all">
+          <Link href="/book" className="inline-flex items-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl">
             Get Started for $699
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import HeroCarousel from "@/components/HeroCarousel";
 
 export const metadata: Metadata = {
   title: "LDASD Estate Planning | Affordable Trusts & Wills for Peace of Mind",
@@ -86,32 +87,19 @@ const testimonials = [
 export default function Home() {
   return (
     <div className="bg-background overflow-hidden">
-      {/* Hero Section with 3D Effect */}
-      <section className="relative isolate min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary via-primary-dark to-primary">
-        {/* Animated gradient orbs - 3D effect */}
+      {/* Hero Section with Carousel */}
+      <section className="relative isolate min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-sand via-ivory to-tan">
+        {/* Warm gradient orbs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-secondary/20 blur-[120px] animate-pulse" />
-          <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-secondary/10 blur-[100px] animate-pulse" style={{ animationDelay: "1s" }} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full bg-white/5 blur-[150px]" />
+          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-secondary/15 blur-[120px] animate-pulse" />
+          <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[100px] animate-pulse" style={{ animationDelay: "1s" }} />
         </div>
-
-        {/* 3D Grid pattern */}
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage: `linear-gradient(rgba(123, 44, 191, 0.1) 1px, transparent 1px),
-                             linear-gradient(90deg, rgba(123, 44, 191, 0.1) 1px, transparent 1px)`,
-            backgroundSize: "60px 60px",
-            transform: "perspective(1000px) rotateX(60deg)",
-            transformOrigin: "top",
-          }}
-        />
 
         <div className="relative mx-auto max-w-7xl px-6 py-32 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="max-w-2xl">
               <div className="mb-8">
-                <span className="inline-flex items-center gap-2 rounded-full bg-secondary/10 px-4 py-2 text-sm font-medium text-secondary ring-1 ring-secondary/20 backdrop-blur-sm">
+                <span className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-md px-4 py-2 text-sm font-medium text-primary ring-1 ring-primary/20 shadow-glass">
                   <span className="relative flex h-2 w-2">
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-secondary opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-secondary"></span>
@@ -120,22 +108,22 @@ export default function Home() {
                 </span>
               </div>
 
-              <h1 className="text-5xl font-bold tracking-tight text-white sm:text-7xl leading-[1.1]">
+              <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-7xl leading-[1.1]">
                 <span className="block">Protect</span>
                 <span className="block">What Matters</span>
-                <span className="block bg-gradient-to-r from-secondary via-accent-light to-secondary bg-clip-text text-transparent">
+                <span className="block bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
                   Most.
                 </span>
               </h1>
 
-              <p className="mt-8 text-xl leading-8 text-white/80 max-w-xl">
+              <p className="mt-8 text-xl leading-8 text-foreground/70 max-w-xl">
                 Simple, affordable estate planning. Create your trust, will, or complete estate plan online in minutes. Starting at just $199.
               </p>
 
               <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <Link
                   href="/book"
-                  className="group relative inline-flex items-center gap-2 rounded-full bg-secondary px-8 py-4 text-base font-semibold text-white shadow-lg shadow-secondary/25 hover:shadow-secondary/40 hover:bg-accent transition-all duration-300 transform hover:scale-105"
+                  className="group relative inline-flex items-center gap-2 rounded-full bg-secondary px-8 py-4 text-base font-semibold text-white shadow-premium hover:shadow-premium-hover transition-all duration-400 transform hover:scale-105"
                 >
                   <span>Create Your Estate Plan</span>
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -144,7 +132,7 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/products"
-                  className="inline-flex items-center gap-2 text-white/90 hover:text-secondary transition-colors font-medium"
+                  className="inline-flex items-center gap-2 text-primary hover:text-secondary transition-colors font-medium"
                 >
                   View Products & Pricing
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -154,41 +142,9 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Hero Image with Stats Overlay */}
-            <div className="relative">
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src="/images/hero/family-beach.jpg"
-                  alt="Happy family enjoying San Diego beach"
-                  width={600}
-                  height={500}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
-
-                {/* Stats overlay */}
-                <div className="absolute bottom-0 inset-x-0 p-6">
-                  <div className="grid grid-cols-2 gap-4">
-                    {stats.map((stat, index) => (
-                      <div
-                        key={stat.label}
-                        className="text-center p-3 rounded-xl bg-white/10 backdrop-blur-sm"
-                      >
-                        <p className="text-2xl sm:text-3xl font-bold text-white">
-                          {stat.value}<span className="text-lg">{stat.suffix}</span>
-                        </p>
-                        <p className="text-xs text-white/70">{stat.label}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              {/* Floating badge */}
-              <div className="absolute -bottom-4 -right-4 bg-secondary text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg">
-                San Diego Based
-              </div>
+            {/* Hero Carousel */}
+            <div className="relative h-[600px]">
+              <HeroCarousel />
             </div>
           </div>
         </div>
@@ -198,7 +154,7 @@ export default function Home() {
       </section>
 
       {/* Trust Indicators */}
-      <section className="relative py-16 bg-background">
+      <section className="relative py-16 bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 text-foreground/40">
             <span className="text-sm font-medium uppercase tracking-wider">Trusted By</span>
@@ -211,7 +167,7 @@ export default function Home() {
       </section>
 
       {/* Why Estate Planning Section */}
-      <section className="relative py-24 sm:py-32 bg-background overflow-hidden">
+      <section className="relative py-24 sm:py-32 bg-tan overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="order-2 lg:order-1">
@@ -285,7 +241,7 @@ export default function Home() {
       </section>
 
       {/* Products Section with 3D Cards */}
-      <section className="relative py-24 sm:py-32 bg-gradient-to-b from-background via-primary/5 to-background">
+      <section className="relative py-24 sm:py-32 bg-sky">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <span className="inline-block text-secondary font-semibold tracking-wider text-sm uppercase mb-4">
@@ -304,20 +260,19 @@ export default function Home() {
               <Link
                 key={product.name}
                 href={product.href}
-                className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 ring-1 ring-black/5"
-                style={{ perspective: "1000px" }}
+                className="group relative bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover transition-all duration-400 transform hover:-translate-y-2 hover:scale-[1.02] ring-1 ring-black/5"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-primary/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
 
                 <div className="relative">
                   <div className="flex items-start justify-between mb-6">
-                    <div className="inline-flex items-center justify-center w-14 h-14 rounded-xl bg-primary/10 text-primary group-hover:scale-110 transition-transform">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 text-primary group-hover:scale-110 group-hover:rotate-3 transition-all duration-400">
                       {product.icon}
                     </div>
-                    <span className="text-sm font-semibold text-secondary">{product.price}</span>
+                    <span className="text-sm font-semibold text-secondary bg-secondary/10 px-3 py-1.5 rounded-full">{product.price}</span>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                  <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                     {product.name}
                   </h3>
 
@@ -325,9 +280,9 @@ export default function Home() {
                     {product.description}
                   </p>
 
-                  <div className="inline-flex items-center gap-2 text-secondary font-semibold group-hover:gap-3 transition-all">
+                  <div className="inline-flex items-center gap-2 text-secondary font-semibold group-hover:gap-3 transition-all duration-300">
                     Learn More
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
                   </div>
@@ -350,12 +305,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials with 3D Carousel Effect */}
-      <section className="relative py-24 sm:py-32 bg-primary overflow-hidden">
+      {/* Testimonials with Glass Morphism */}
+      <section className="relative py-24 sm:py-32 bg-sage overflow-hidden">
         {/* Background orbs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 -right-20 w-[400px] h-[400px] rounded-full bg-secondary/10 blur-[100px]" />
-          <div className="absolute bottom-1/4 -left-20 w-[300px] h-[300px] rounded-full bg-white/5 blur-[80px]" />
+          <div className="absolute top-1/4 -right-20 w-[400px] h-[400px] rounded-full bg-primary/10 blur-[100px]" />
+          <div className="absolute bottom-1/4 -left-20 w-[300px] h-[300px] rounded-full bg-secondary/10 blur-[80px]" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -363,10 +318,10 @@ export default function Home() {
             <span className="inline-block text-secondary font-semibold tracking-wider text-sm uppercase mb-4">
               Real Stories, Real Peace of Mind
             </span>
-            <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               What Our Families Say
             </h2>
-            <p className="mt-6 text-lg leading-8 text-white/70">
+            <p className="mt-6 text-lg leading-8 text-foreground/70">
               Join thousands of families who've protected what matters most.
             </p>
           </div>
@@ -375,7 +330,7 @@ export default function Home() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="relative bg-white/10 backdrop-blur-sm rounded-2xl p-8 ring-1 ring-white/20 hover:bg-white/15 transition-colors"
+                className="relative bg-white/60 backdrop-blur-md rounded-3xl p-8 shadow-glass ring-1 ring-white/50 hover:bg-white/70 hover:shadow-premium transition-all duration-400 transform hover:-translate-y-1"
               >
                 {/* Stars */}
                 <div className="flex gap-1 mb-6">
@@ -386,17 +341,17 @@ export default function Home() {
                   ))}
                 </div>
 
-                <blockquote className="text-white/90 text-lg leading-relaxed mb-6">
+                <blockquote className="text-foreground text-lg leading-relaxed mb-6">
                   &ldquo;{testimonial.content}&rdquo;
                 </blockquote>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-secondary/20 flex items-center justify-center">
-                    <span className="text-secondary font-bold">{testimonial.author.charAt(0)}</span>
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center ring-2 ring-white/50">
+                    <span className="text-primary font-bold text-lg">{testimonial.author.charAt(0)}</span>
                   </div>
                   <div>
-                    <p className="font-semibold text-white">{testimonial.author}</p>
-                    <p className="text-sm text-white/60">{testimonial.role}</p>
+                    <p className="font-semibold text-foreground">{testimonial.author}</p>
+                    <p className="text-sm text-foreground/60">{testimonial.role}</p>
                   </div>
                 </div>
               </div>
@@ -405,21 +360,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section with 3D Elements */}
+      {/* CTA Section with Lighter Gradient */}
       <section className="relative py-24 sm:py-32 bg-background overflow-hidden">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="relative bg-gradient-to-br from-primary via-primary-dark to-primary rounded-3xl p-12 md:p-20 overflow-hidden shadow-2xl">
-            {/* 3D decoration */}
+          <div className="relative bg-gradient-to-br from-primary via-primary to-primary-light rounded-3xl p-12 md:p-20 overflow-hidden shadow-premium">
+            {/* Warm decoration */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              <div className="absolute -top-20 -right-20 w-[300px] h-[300px] rounded-full bg-secondary/20 blur-[80px]" />
-              <div className="absolute -bottom-20 -left-20 w-[250px] h-[250px] rounded-full bg-white/10 blur-[60px]" />
+              <div className="absolute -top-20 -right-20 w-[300px] h-[300px] rounded-full bg-secondary/30 blur-[80px]" />
+              <div className="absolute -bottom-20 -left-20 w-[250px] h-[250px] rounded-full bg-white/20 blur-[60px]" />
             </div>
 
             <div className="relative text-center max-w-3xl mx-auto">
               <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-6">
                 Ready to Protect Your Family?
               </h2>
-              <p className="text-xl text-white/80 mb-10">
+              <p className="text-xl text-white/90 mb-10">
                 Get started in minutes. Create your trust, will, or complete estate plan online today.
                 No appointments necessary.
               </p>
@@ -427,7 +382,7 @@ export default function Home() {
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Link
                   href="/book"
-                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white shadow-lg shadow-secondary/25 hover:shadow-secondary/40 hover:bg-accent transition-all duration-300 transform hover:scale-105"
+                  className="group inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white shadow-premium hover:shadow-premium-hover hover:bg-secondary-light transition-all duration-400 transform hover:scale-105"
                 >
                   Start Your Estate Plan Now
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -436,13 +391,13 @@ export default function Home() {
                 </Link>
                 <Link
                   href="/pricing"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white/10 px-8 py-4 text-lg font-semibold text-white ring-1 ring-white/20 hover:bg-white/20 transition-all"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-white/20 backdrop-blur-sm px-8 py-4 text-lg font-semibold text-white ring-1 ring-white/30 hover:bg-white/30 transition-all duration-300"
                 >
                   View Pricing
                 </Link>
               </div>
 
-              <p className="mt-8 text-sm text-white/50">
+              <p className="mt-8 text-sm text-white/70">
                 Starting at $199. 100% satisfaction guaranteed. Update anytime.
               </p>
             </div>

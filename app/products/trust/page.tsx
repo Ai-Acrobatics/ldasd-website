@@ -11,27 +11,31 @@ export default function TrustPage() {
   return (
     <div className="bg-background">
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary to-primary-dark overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary to-primary-light overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-secondary/20 blur-[120px]" />
+          <div className="absolute inset-0 bg-white/5" />
+        </div>
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block px-4 py-1 rounded-full bg-secondary/20 text-secondary text-sm font-semibold mb-6">
+              <span className="inline-block px-4 py-1 rounded-full bg-secondary text-white text-sm font-semibold mb-6 shadow-lg">
                 Most Popular
               </span>
               <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl">
                 Living Trust
               </h1>
-              <p className="mt-6 text-xl text-white/80">
+              <p className="mt-6 text-xl text-white/90">
                 Avoid probate, keep your estate private, and protect your assets with a comprehensive living trust.
               </p>
               <div className="mt-8 flex items-baseline gap-4">
-                <span className="text-5xl font-bold text-white">$599</span>
-                <span className="text-white/70">one-time fee</span>
+                <span className="text-5xl font-bold text-secondary">$599</span>
+                <span className="text-white/80">one-time fee</span>
               </div>
               <div className="mt-8 flex flex-col sm:flex-row gap-4">
                 <Link
                   href="/book"
-                  className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl"
                 >
                   Create Your Trust
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -40,14 +44,14 @@ export default function TrustPage() {
                 </Link>
                 <Link
                   href="/pricing"
-                  className="inline-flex items-center justify-center rounded-full bg-white/10 px-8 py-4 text-lg font-semibold text-white ring-1 ring-white/20 hover:bg-white/20 transition-all"
+                  className="inline-flex items-center justify-center rounded-full bg-white/10 px-8 py-4 text-lg font-semibold text-white ring-1 ring-white/20 hover:bg-white/20 transition-all duration-300"
                 >
                   Compare Plans
                 </Link>
               </div>
             </div>
             <div className="relative">
-              <div className="rounded-3xl bg-white/10 backdrop-blur-sm p-8 ring-1 ring-white/20">
+              <div className="rounded-3xl bg-white/10 backdrop-blur-sm p-8 ring-1 ring-white/20 shadow-premium">
                 <h3 className="text-xl font-bold text-white mb-6">What's Included:</h3>
                 <ul className="space-y-3">
                   {[
@@ -77,14 +81,14 @@ export default function TrustPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-24">
+      <section className="py-24 bg-tan">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
             <div>
               <h2 className="text-4xl font-bold text-foreground">Why Choose a Living Trust?</h2>
               <p className="mt-4 text-lg text-foreground/70">Key benefits that protect your family</p>
             </div>
-            <div className="relative rounded-2xl overflow-hidden shadow-xl">
+            <div className="relative rounded-3xl overflow-hidden shadow-premium">
               <Image
                 src="/images/families/grandparents.jpg"
                 alt="Grandparents enjoying retirement with family"
@@ -109,7 +113,7 @@ export default function TrustPage() {
                 description: "If you become unable to manage your affairs, your successor trustee can step in immediately without court proceedings.",
               },
             ].map((benefit) => (
-              <div key={benefit.title} className="bg-white rounded-2xl p-8 shadow-lg">
+              <div key={benefit.title} className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
                 <h3 className="text-xl font-bold text-foreground mb-3">{benefit.title}</h3>
                 <p className="text-foreground/70">{benefit.description}</p>
               </div>
@@ -119,7 +123,7 @@ export default function TrustPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-24 bg-primary/5">
+      <section className="py-24 bg-sage">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-foreground text-center mb-12">Common Questions</h2>
           <div className="space-y-6">
@@ -141,10 +145,10 @@ export default function TrustPage() {
                 a: "Absolutely. This is a \"revocable\" living trust, meaning you can modify or revoke it at any time. We provide free updates for 3 years.",
               },
             ].map((faq) => (
-              <details key={faq.q} className="group bg-white rounded-lg p-6 shadow">
+              <details key={faq.q} className="group bg-white rounded-2xl p-6 shadow-premium hover:shadow-premium-hover transition-all duration-300">
                 <summary className="flex justify-between items-center cursor-pointer font-semibold text-foreground">
                   {faq.q}
-                  <svg className="w-5 h-5 text-primary group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5 text-primary group-open:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
@@ -156,15 +160,18 @@ export default function TrustPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-primary">
-        <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
+      <section className="relative py-24 bg-gradient-to-br from-primary to-primary-light overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-secondary/20 blur-[120px]" />
+        </div>
+        <div className="relative mx-auto max-w-3xl px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Create Your Trust?</h2>
-          <p className="text-xl text-white/80 mb-10">
+          <p className="text-xl text-white/90 mb-10">
             Protect your family and avoid probate with a professional living trust.
           </p>
           <Link
             href="/book"
-            className="inline-flex items-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all"
+            className="inline-flex items-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Get Started Now
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">

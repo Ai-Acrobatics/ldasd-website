@@ -91,10 +91,10 @@ const faqs = [
 export default function PricingPage() {
   return (
     <div className="bg-background">
-      <section className="pt-32 pb-20 bg-gradient-to-br from-primary to-primary-dark">
+      <section className="pt-32 pb-20 bg-gradient-to-br from-sage to-sky">
         <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <h1 className="text-5xl font-bold text-white sm:text-6xl">Simple, Transparent Pricing</h1>
-          <p className="mt-6 text-xl text-white/80 max-w-2xl mx-auto">
+          <h1 className="text-5xl font-bold text-foreground sm:text-6xl">Simple, Transparent Pricing</h1>
+          <p className="mt-6 text-xl text-foreground/80 max-w-2xl mx-auto">
             One-time fee. No subscriptions. No hidden costs. Choose the plan that's right for your family.
           </p>
         </div>
@@ -106,32 +106,32 @@ export default function PricingPage() {
             {tiers.map((tier) => (
               <div
                 key={tier.name}
-                className={`relative rounded-3xl p-8 ${
+                className={`relative rounded-3xl p-8 transition-all duration-300 ${
                   tier.highlighted
-                    ? "bg-primary text-white shadow-2xl ring-2 ring-secondary scale-105 z-10"
-                    : "bg-white shadow-lg ring-1 ring-black/5"
+                    ? "bg-white shadow-premium hover:shadow-premium-hover ring-2 ring-secondary scale-105 z-10 hover:-translate-y-2"
+                    : "bg-white shadow-premium hover:shadow-premium-hover hover:-translate-y-2"
                 }`}
               >
                 {tier.highlighted && (
                   <div className="absolute -top-6 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center rounded-full bg-secondary px-6 py-2 text-sm font-semibold text-white shadow-lg">
+                    <span className="inline-flex items-center rounded-full bg-secondary px-6 py-2 text-sm font-semibold text-white shadow-premium">
                       Most Popular
                     </span>
                   </div>
                 )}
 
                 <div className="mb-8">
-                  <h3 className={`text-2xl font-bold ${tier.highlighted ? "text-white" : "text-foreground"}`}>
+                  <h3 className="text-2xl font-bold text-foreground">
                     {tier.name}
                   </h3>
-                  <p className={`mt-2 text-sm ${tier.highlighted ? "text-white/70" : "text-foreground/60"}`}>
+                  <p className="mt-2 text-sm text-foreground/60">
                     {tier.description}
                   </p>
                   <div className="mt-6 flex items-baseline gap-x-2">
-                    <span className={`text-5xl font-bold tracking-tight ${tier.highlighted ? "text-white" : "text-foreground"}`}>
+                    <span className="text-5xl font-bold tracking-tight text-foreground">
                       {tier.price}
                     </span>
-                    <span className={`text-sm ${tier.highlighted ? "text-white/70" : "text-foreground/60"}`}>
+                    <span className="text-sm text-foreground/60">
                       one-time
                     </span>
                   </div>
@@ -139,10 +139,10 @@ export default function PricingPage() {
 
                 <Link
                   href={tier.href}
-                  className={`block w-full rounded-full py-3 px-6 text-center text-sm font-semibold mb-8 transition-all ${
+                  className={`block w-full rounded-full py-3 px-6 text-center text-sm font-semibold mb-8 transition-all duration-300 ${
                     tier.highlighted
-                      ? "bg-secondary text-white hover:bg-accent shadow-lg"
-                      : "bg-primary text-white hover:bg-primary-dark"
+                      ? "bg-secondary text-white hover:bg-secondary/90 shadow-premium"
+                      : "bg-primary text-white hover:bg-primary/90 shadow-md hover:shadow-lg"
                   }`}
                 >
                   {tier.cta}
@@ -162,7 +162,7 @@ export default function PricingPage() {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <span className={`text-sm ${tier.highlighted ? "text-white/90" : "text-foreground/70"}`}>
+                      <span className="text-sm text-foreground/70">
                         {feature}
                       </span>
                     </li>
@@ -183,15 +183,15 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="py-24 bg-primary/5">
+      <section className="py-24 bg-tan">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-foreground text-center mb-12">Frequently Asked Questions</h2>
           <div className="space-y-6">
             {faqs.map((faq) => (
-              <details key={faq.q} className="group bg-white rounded-lg p-6 shadow">
+              <details key={faq.q} className="group bg-white rounded-2xl p-6 shadow-premium hover:shadow-premium-hover transition-all duration-300">
                 <summary className="flex justify-between items-center cursor-pointer font-semibold text-foreground">
                   {faq.q}
-                  <svg className="w-5 h-5 text-primary group-open:rotate-180 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg className="w-5 h-5 text-secondary group-open:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>

@@ -7,22 +7,22 @@ export const metadata: Metadata = {
 
 export default function BookPage() {
   return (
-    <div className="bg-background">
+    <div className="bg-sand">
       {/* Hero */}
-      <section className="relative py-24 sm:py-32 bg-gradient-to-br from-primary via-primary-dark to-primary overflow-hidden">
+      <section className="relative py-24 sm:py-32 bg-gradient-to-br from-tan to-sky overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-accent/20 blur-[100px]" />
-          <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full bg-accent/10 blur-[80px]" />
+          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-secondary/20 blur-[100px]" />
+          <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full bg-primary/10 blur-[80px]" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <span className="inline-block text-secondary font-semibold tracking-wider text-sm uppercase mb-4">
             Get Started
           </span>
-          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
+          <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl mb-6">
             Create Your Estate Plan
           </h1>
-          <p className="text-xl text-white/80 max-w-3xl mx-auto">
+          <p className="text-xl text-foreground/80 max-w-3xl mx-auto">
             Choose the product that's right for you and get started in minutes. No appointments necessary.
             Attorney-backed documents starting at just $199.
           </p>
@@ -74,7 +74,7 @@ export default function BookPage() {
                 ))}
               </div>
 
-              <div className="mt-12 p-6 bg-secondary/10 rounded-2xl">
+              <div className="mt-12 p-6 bg-white/80 backdrop-blur-sm rounded-2xl shadow-premium">
                 <h3 className="font-semibold text-foreground mb-2">100% Satisfaction Guaranteed</h3>
                 <p className="text-foreground/70">
                   Not happy with your documents? We offer a 60-day money-back guarantee, no questions asked.
@@ -83,7 +83,7 @@ export default function BookPage() {
             </div>
 
             {/* Product Selection */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg ring-1 ring-black/5">
+            <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-premium">
               <h2 className="text-2xl font-bold text-foreground mb-6">Select Your Product</h2>
               <div className="space-y-4 mb-8">
                 {[
@@ -197,7 +197,7 @@ export default function BookPage() {
 
                 <button
                   type="submit"
-                  className="w-full rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all"
+                  className="w-full rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-secondary/90 shadow-premium hover:shadow-premium-hover transition-all duration-300"
                 >
                   Start Your Estate Plan
                 </button>

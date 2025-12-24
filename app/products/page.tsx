@@ -123,9 +123,10 @@ export default function ProductsPage() {
   return (
     <div className="bg-background">
       {/* Hero */}
-      <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary via-primary-dark to-primary overflow-hidden">
+      <section className="relative pt-32 pb-20 bg-gradient-to-br from-primary to-primary-light overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-secondary/20 blur-[120px]" />
+          <div className="absolute inset-0 bg-white/5" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -133,7 +134,7 @@ export default function ProductsPage() {
             <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl">
               Choose Your Estate Plan
             </h1>
-            <p className="mt-6 text-xl leading-8 text-white/80">
+            <p className="mt-6 text-xl leading-8 text-white/90">
               From basic wills to comprehensive estate plans, we have the right solution for every family.
               All products are attorney-backed and state-specific.
             </p>
@@ -142,38 +143,38 @@ export default function ProductsPage() {
       </section>
 
       {/* Pricing Cards */}
-      <section className="relative py-24 bg-background">
+      <section className="relative py-24 bg-sand">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             {products.map((product) => (
               <div
                 key={product.name}
-                className={`relative rounded-3xl p-8 ${
+                className={`relative rounded-3xl p-8 transition-all duration-300 ${
                   product.popular
-                    ? "bg-primary text-white ring-2 ring-secondary shadow-2xl scale-105"
-                    : "bg-white ring-1 ring-black/5 shadow-lg"
+                    ? "bg-white shadow-premium hover:shadow-premium-hover hover:-translate-y-2 ring-2 ring-secondary scale-105"
+                    : "bg-white shadow-premium hover:shadow-premium-hover hover:-translate-y-2"
                 }`}
               >
                 {product.popular && (
                   <div className="absolute -top-5 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center rounded-full bg-secondary px-4 py-1 text-sm font-semibold text-white">
+                    <span className="inline-flex items-center rounded-full bg-secondary px-4 py-1 text-sm font-semibold text-white shadow-lg">
                       Most Popular
                     </span>
                   </div>
                 )}
 
                 <div className="mb-8">
-                  <h3 className={`text-2xl font-bold ${product.popular ? "text-white" : "text-foreground"}`}>
+                  <h3 className="text-2xl font-bold text-foreground">
                     {product.name}
                   </h3>
-                  <p className={`mt-2 text-sm ${product.popular ? "text-white/70" : "text-foreground/60"}`}>
+                  <p className="mt-2 text-sm text-foreground/70">
                     {product.description}
                   </p>
                   <div className="mt-6 flex items-baseline gap-x-2">
-                    <span className={`text-5xl font-bold tracking-tight ${product.popular ? "text-white" : "text-foreground"}`}>
+                    <span className="text-5xl font-bold tracking-tight text-secondary">
                       {product.price}
                     </span>
-                    <span className={`text-sm font-semibold ${product.popular ? "text-white/70" : "text-foreground/60"}`}>
+                    <span className="text-sm font-semibold text-foreground/60">
                       one-time
                     </span>
                   </div>
@@ -181,10 +182,10 @@ export default function ProductsPage() {
 
                 <Link
                   href={product.href}
-                  className={`block w-full rounded-full py-3 px-6 text-center text-sm font-semibold transition-all ${
+                  className={`block w-full rounded-full py-3 px-6 text-center text-sm font-semibold transition-all duration-300 ${
                     product.popular
-                      ? "bg-secondary text-white hover:bg-accent"
-                      : "bg-primary text-white hover:bg-primary-dark"
+                      ? "bg-secondary text-white hover:bg-accent shadow-md hover:shadow-lg"
+                      : "bg-secondary text-white hover:bg-accent shadow-md hover:shadow-lg"
                   }`}
                 >
                   {product.cta}
@@ -194,7 +195,7 @@ export default function ProductsPage() {
                   {product.features.map((feature) => (
                     <li key={feature} className="flex gap-x-3">
                       <svg
-                        className={`h-6 w-5 flex-none ${product.popular ? "text-secondary" : "text-primary"}`}
+                        className="h-6 w-5 flex-none text-primary"
                         viewBox="0 0 20 20"
                         fill="currentColor"
                       >
@@ -204,7 +205,7 @@ export default function ProductsPage() {
                           clipRule="evenodd"
                         />
                       </svg>
-                      <span className={`text-sm ${product.popular ? "text-white/90" : "text-foreground/70"}`}>
+                      <span className="text-sm text-foreground/80">
                         {feature}
                       </span>
                     </li>
@@ -223,7 +224,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Comparison Table */}
-      <section className="relative py-24 bg-gradient-to-b from-background to-primary/5">
+      <section className="relative py-24 bg-sky">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold tracking-tight text-foreground">
@@ -234,9 +235,9 @@ export default function ProductsPage() {
             </p>
           </div>
 
-          <div className="overflow-hidden rounded-2xl bg-white shadow-xl">
+          <div className="overflow-hidden rounded-3xl bg-white shadow-premium">
             <table className="w-full">
-              <thead className="bg-primary">
+              <thead className="bg-gradient-to-r from-primary to-primary-light">
                 <tr>
                   <th className="py-4 px-6 text-left text-sm font-semibold text-white">Feature</th>
                   <th className="py-4 px-6 text-center text-sm font-semibold text-white">Will</th>
@@ -284,17 +285,20 @@ export default function ProductsPage() {
       </section>
 
       {/* CTA */}
-      <section className="relative py-24 bg-primary">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+      <section className="relative py-24 bg-gradient-to-br from-primary to-primary-light overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] rounded-full bg-secondary/20 blur-[120px]" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             Not Sure Which Plan is Right for You?
           </h2>
-          <p className="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
             Our team can help you choose the best estate planning solution for your unique situation.
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all"
+            className="inline-flex items-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl"
           >
             Get Free Consultation
             <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">

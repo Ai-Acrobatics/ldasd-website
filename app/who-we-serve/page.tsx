@@ -86,7 +86,7 @@ export default function WhoWeServePage() {
   return (
     <div className="bg-background">
       {/* Hero */}
-      <section className="relative py-24 sm:py-32 bg-gradient-to-br from-primary via-primary-dark to-primary overflow-hidden">
+      <section className="relative py-24 sm:py-32 bg-gradient-to-br from-sky to-tan overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-secondary/20 blur-[100px]" />
         </div>
@@ -97,16 +97,16 @@ export default function WhoWeServePage() {
               <span className="inline-block text-secondary font-semibold tracking-wider text-sm uppercase mb-4">
                 Who We Serve
               </span>
-              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6">
+              <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl mb-6">
                 Estate Planning for Everyone
               </h1>
-              <p className="text-xl text-white/80">
+              <p className="text-xl text-foreground/80">
                 From young families to retirees, homeowners to pet parents—if you have loved ones
                 or assets to protect, we&apos;re here for you.
               </p>
             </div>
             <div className="relative mx-auto lg:mx-0">
-              <div className="rounded-3xl overflow-hidden shadow-2xl max-w-md">
+              <div className="rounded-3xl overflow-hidden shadow-premium max-w-md hover:shadow-premium-hover transition-all duration-300">
                 <Image
                   src="/images/hero/family-sunset.jpg"
                   alt="Happy family enjoying San Diego sunset"
@@ -122,16 +122,16 @@ export default function WhoWeServePage() {
       </section>
 
       {/* Client Types */}
-      <section className="py-24">
+      <section className="py-24 bg-sage">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
             {clientTypes.map((client) => (
-              <div key={client.title} className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow">
+              <div key={client.title} className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 hover:scale-[1.02] transition-all duration-300 text-center">
                 <span className="text-6xl mb-6 block">{client.icon}</span>
                 <h2 className="text-2xl font-bold text-foreground mb-4">{client.title}</h2>
                 <p className="text-foreground/70 mb-6">{client.description}</p>
-                <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wider">Common Needs:</h3>
-                <ul className="space-y-3">
+                <h3 className="font-semibold text-foreground mb-4 text-sm uppercase tracking-wider text-left">Common Needs:</h3>
+                <ul className="space-y-3 text-left">
                   {client.needs.map((need) => (
                     <li key={need} className="flex items-start gap-3">
                       <svg className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
@@ -148,7 +148,7 @@ export default function WhoWeServePage() {
       </section>
 
       {/* Everyone Benefits */}
-      <section className="py-24 bg-primary/5">
+      <section className="py-24 bg-sky">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground mb-4">
@@ -178,7 +178,7 @@ export default function WhoWeServePage() {
                 description: "Ensure the people and causes you care about are protected and provided for.",
               },
             ].map((reason) => (
-              <div key={reason.title} className="bg-white rounded-2xl p-6 shadow-lg text-center">
+              <div key={reason.title} className="bg-white rounded-2xl p-6 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300 text-center">
                 <h3 className="text-xl font-bold text-primary mb-3">{reason.title}</h3>
                 <p className="text-foreground/70 text-sm">{reason.description}</p>
               </div>
@@ -188,7 +188,7 @@ export default function WhoWeServePage() {
       </section>
 
       {/* No Minimums */}
-      <section className="py-24">
+      <section className="py-24 bg-tan">
         <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-foreground mb-6">
             No Minimum Net Worth Required
@@ -197,7 +197,7 @@ export default function WhoWeServePage() {
             Unlike traditional estate planning attorneys who may require $500K+ in assets,
             we believe everyone deserves quality estate planning. Our products start at just $199.
           </p>
-          <div className="bg-secondary/10 rounded-2xl p-8">
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-premium">
             <p className="text-2xl font-bold text-secondary mb-4">
               "Estate planning for everyone, not just the wealthy."
             </p>
