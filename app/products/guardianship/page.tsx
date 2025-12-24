@@ -44,9 +44,12 @@ export default function GuardianshipPage() {
               { title: "Avoid Family Conflicts", description: "Clear guardianship instructions prevent family disputes during an already difficult time. Everyone knows your wishes." },
               { title: "Financial & Personal Care", description: "Designate who manages your children's inheritance and who provides day-to-day care. They can be the same person or different." },
             ].map((benefit) => (
-              <div key={benefit.title} className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
-                <h3 className="text-xl font-bold text-foreground mb-3">{benefit.title}</h3>
-                <p className="text-foreground/80">{benefit.description}</p>
+              <div key={benefit.title} className="bg-white rounded-3xl shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+                <div className="h-24 bg-gradient-to-br from-primary/15 to-secondary/15" />
+                <div className="p-8">
+                  <h3 className="text-xl font-bold text-foreground mb-3">{benefit.title}</h3>
+                  <p className="text-foreground/80">{benefit.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -56,11 +59,13 @@ export default function GuardianshipPage() {
       <section className="py-24 bg-sage">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-foreground text-center mb-12">What to Consider</h2>
-          <div className="bg-white rounded-3xl p-8 shadow-premium space-y-6">
-            <div>
-              <h3 className="font-bold text-foreground mb-2">Age & Health</h3>
-              <p className="text-foreground/80">Choose guardians young enough to raise your children to adulthood and in good health.</p>
-            </div>
+          <div className="bg-white rounded-3xl shadow-premium overflow-hidden">
+            <div className="h-24 bg-gradient-to-br from-primary/15 to-secondary/15" />
+            <div className="p-8 space-y-6">
+              <div>
+                <h3 className="font-bold text-foreground mb-2">Age & Health</h3>
+                <p className="text-foreground/80">Choose guardians young enough to raise your children to adulthood and in good health.</p>
+              </div>
             <div>
               <h3 className="font-bold text-foreground mb-2">Values & Lifestyle</h3>
               <p className="text-foreground/80">Select guardians who share your values, parenting style, and can provide a stable home.</p>
@@ -76,6 +81,7 @@ export default function GuardianshipPage() {
             <div>
               <h3 className="font-bold text-foreground mb-2">Willingness to Serve</h3>
               <p className="text-foreground/80">Always discuss your decision with potential guardians before naming them.</p>
+            </div>
             </div>
           </div>
         </div>

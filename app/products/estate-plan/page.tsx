@@ -56,10 +56,13 @@ export default function EstatePlanPage() {
               { icon: "⭐", title: "Priority Support", description: "Faster response times guaranteed" },
               { icon: "🔄", title: "Free Unlimited Updates for Life", description: "Change anytime, no extra fees" },
             ].map((item) => (
-              <div key={item.title} className="bg-white rounded-3xl p-6 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300 text-center">
-                <div className="text-5xl mb-4">{item.icon}</div>
-                <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
-                <p className="text-sm text-foreground/80">{item.description}</p>
+              <div key={item.title} className="bg-white rounded-3xl shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300 text-center overflow-hidden">
+                <div className="h-24 bg-gradient-to-br from-primary/15 to-secondary/15" />
+                <div className="p-6">
+                  <div className="text-5xl mb-4">{item.icon}</div>
+                  <h3 className="text-lg font-bold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm text-foreground/80">{item.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -81,9 +84,12 @@ export default function EstatePlanPage() {
               { title: "Living Will", description: "Document your end-of-life care wishes and relieve your family of difficult decisions." },
               { title: "HIPAA Authorization", description: "Ensure your designated agents can access your medical information." },
             ].map((doc) => (
-              <div key={doc.title} className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
-                <h3 className="text-xl font-bold text-foreground mb-3">{doc.title}</h3>
-                <p className="text-foreground/80">{doc.description}</p>
+              <div key={doc.title} className="bg-white rounded-3xl shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+                <div className="h-24 bg-gradient-to-br from-primary/15 to-secondary/15" />
+                <div className="p-8">
+                  <h3 className="text-xl font-bold text-foreground mb-3">{doc.title}</h3>
+                  <p className="text-foreground/80">{doc.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -96,21 +102,33 @@ export default function EstatePlanPage() {
             <h2 className="text-4xl font-bold text-foreground">Why Choose the Complete Plan?</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
-              <h3 className="text-xl font-bold text-primary mb-4">Best Value</h3>
-              <p className="text-foreground/80 mb-4">Save over $200 compared to purchasing documents individually. One comprehensive package at one great price.</p>
+            <div className="bg-white rounded-3xl shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+              <div className="h-24 bg-gradient-to-br from-primary/15 to-secondary/15" />
+              <div className="p-8">
+                <h3 className="text-xl font-bold text-primary mb-4">Best Value</h3>
+                <p className="text-foreground/80 mb-4">Save over $200 compared to purchasing documents individually. One comprehensive package at one great price.</p>
+              </div>
             </div>
-            <div className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
-              <h3 className="text-xl font-bold text-primary mb-4">Lifetime Updates</h3>
-              <p className="text-foreground/80 mb-4">Life changes. Update your documents anytime, free forever. Marriage, divorce, new children, moves - we've got you covered.</p>
+            <div className="bg-white rounded-3xl shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+              <div className="h-24 bg-gradient-to-br from-primary/15 to-secondary/15" />
+              <div className="p-8">
+                <h3 className="text-xl font-bold text-primary mb-4">Lifetime Updates</h3>
+                <p className="text-foreground/80 mb-4">Life changes. Update your documents anytime, free forever. Marriage, divorce, new children, moves - we've got you covered.</p>
+              </div>
             </div>
-            <div className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
-              <h3 className="text-xl font-bold text-primary mb-4">Complete Protection</h3>
-              <p className="text-foreground/80 mb-4">Cover every scenario: death, incapacity, medical decisions, and asset distribution. Nothing left to chance.</p>
+            <div className="bg-white rounded-3xl shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+              <div className="h-24 bg-gradient-to-br from-primary/15 to-secondary/15" />
+              <div className="p-8">
+                <h3 className="text-xl font-bold text-primary mb-4">Complete Protection</h3>
+                <p className="text-foreground/80 mb-4">Cover every scenario: death, incapacity, medical decisions, and asset distribution. Nothing left to chance.</p>
+              </div>
             </div>
-            <div className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
-              <h3 className="text-xl font-bold text-primary mb-4">Priority Support</h3>
-              <p className="text-foreground/80 mb-4">Get faster response times and direct access to our estate planning specialists whenever you need help.</p>
+            <div className="bg-white rounded-3xl shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300 overflow-hidden">
+              <div className="h-24 bg-gradient-to-br from-primary/15 to-secondary/15" />
+              <div className="p-8">
+                <h3 className="text-xl font-bold text-primary mb-4">Priority Support</h3>
+                <p className="text-foreground/80 mb-4">Get faster response times and direct access to our estate planning specialists whenever you need help.</p>
+              </div>
             </div>
           </div>
         </div>

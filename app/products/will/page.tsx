@@ -55,17 +55,103 @@ export default function WillPage() {
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {features.map((feature) => (
-              <div key={feature} className="bg-white rounded-3xl p-6 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
-                <div className="flex flex-col items-center text-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+              <div key={feature} className="bg-white rounded-3xl overflow-hidden shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
+                <div className="h-32 bg-gradient-to-br from-primary/20 to-secondary/20" />
+                <div className="p-6 text-center">
+                  <div className="w-12 h-12 mx-auto rounded-full bg-secondary/10 flex items-center justify-center">
                     <svg className="w-6 h-6 text-secondary" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
                     </svg>
                   </div>
-                  <p className="text-foreground font-medium">{feature}</p>
+                  <p className="mt-4 text-foreground font-medium">{feature}</p>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-background">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground">How It Works</h2>
+            <p className="mt-4 text-lg text-foreground/80">Simple process, professional results</p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: "1",
+                title: "Complete Online Questionnaire",
+                time: "10-15 minutes",
+                description: "Answer questions about beneficiaries, guardians, and executor. Our guided questionnaire makes it simple."
+              },
+              {
+                step: "2",
+                title: "Attorney Review",
+                time: "1-2 business days",
+                description: "A licensed attorney reviews your will to ensure legal compliance with your state's requirements."
+              },
+              {
+                step: "3",
+                title: "Sign with Witnesses",
+                time: "At your convenience",
+                description: "We provide detailed signing instructions specific to your state. Most states require 2 witnesses."
+              },
+              {
+                step: "4",
+                title: "Store Safely",
+                time: "Ongoing",
+                description: "Receive tips for secure storage and guidance on notifying your executor of the document's location."
+              },
+            ].map((step) => (
+              <div key={step.step} className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mb-6">
+                  <span className="text-2xl font-bold text-white">{step.step}</span>
+                </div>
+                <h3 className="text-xl font-bold text-foreground mb-2">{step.title}</h3>
+                <p className="text-sm text-secondary font-semibold mb-3">{step.time}</p>
+                <p className="text-foreground/80">{step.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 bg-tan">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground">Expected Timeline</h2>
+            <p className="mt-4 text-lg text-foreground/80">Most clients complete their will within 3-5 days</p>
+          </div>
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-white rounded-3xl p-8 shadow-premium">
+              <div className="space-y-6">
+                {[
+                  { phase: "Online questionnaire", duration: "10-15 minutes" },
+                  { phase: "Attorney review", duration: "1-2 business days" },
+                  { phase: "Document delivery", duration: "Same day after review" },
+                  { phase: "Signing", duration: "At your convenience (requires 2 witnesses in most states)" },
+                ].map((item, index) => (
+                  <div key={item.phase} className="flex items-start gap-4">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center">
+                      <svg className="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <div className="flex-1">
+                      <p className="font-semibold text-foreground">{item.phase}</p>
+                      <p className="text-foreground/60 text-sm">{item.duration}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-8 pt-8 border-t border-foreground/10">
+                <div className="text-center">
+                  <p className="text-2xl font-bold text-foreground">Total: 3-5 days</p>
+                  <p className="text-foreground/60 mt-2">From start to signed document</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -74,13 +160,28 @@ export default function WillPage() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-foreground">Why You Need a Will</h2>
-            <p className="mt-4 text-lg text-foreground/80">Essential protection for your family</p>
+            <p className="mt-4 text-lg text-foreground/80">The sobering reality of dying without proper planning</p>
           </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {[
+              { stat: "68%", description: "of Americans don't have a will", impact: "Don't let the state decide your family's future" },
+              { stat: "$5K-$15K", description: "average probate cost without proper planning", impact: "Protect your family from unnecessary expenses" },
+              { stat: "Courts Decide", description: "who raises your children without a will", impact: "You should choose your children's guardians" },
+            ].map((stat) => (
+              <div key={stat.stat} className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300 text-center">
+                <div className="text-5xl font-bold text-primary mb-3">{stat.stat}</div>
+                <p className="text-lg font-semibold text-foreground mb-3">{stat.description}</p>
+                <p className="text-foreground/60 text-sm">{stat.impact}</p>
+              </div>
+            ))}
+          </div>
+
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { title: "Name Guardians", description: "Designate who will care for your minor children if something happens to you. Without a will, the court decides." },
-              { title: "Control Asset Distribution", description: "Specify exactly who gets what. Prevent family disputes and ensure your wishes are honored." },
-              { title: "Appoint Your Executor", description: "Choose someone you trust to manage your estate and ensure your final wishes are carried out properly." },
+              { title: "Name Guardians", description: "Designate who will care for your minor children if something happens to you. Without a will, the court decides—and they may not choose who you would have wanted." },
+              { title: "Control Asset Distribution", description: "Specify exactly who gets what. Prevent family disputes and ensure your wishes are honored. Without a will, state intestacy laws determine distribution." },
+              { title: "Appoint Your Executor", description: "Choose someone you trust to manage your estate and ensure your final wishes are carried out properly. Avoid costly court-appointed administrators." },
             ].map((benefit) => (
               <div key={benefit.title} className="bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
                 <h3 className="text-xl font-bold text-foreground mb-3">{benefit.title}</h3>

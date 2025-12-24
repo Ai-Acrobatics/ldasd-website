@@ -74,12 +74,116 @@ export default function TrustPage() {
               { icon: "🔄", title: "Free updates for 3 years", description: "Modify your trust as your circumstances change" },
               { icon: "🏠", title: "Transfer deed assistance", description: "Help transferring real estate into your trust" },
             ].map((item) => (
-              <div key={item.title} className="bg-tan rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300 text-center">
-                <div className="text-5xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
-                <p className="text-foreground/80">{item.description}</p>
+              <div key={item.title} className="bg-tan rounded-3xl overflow-hidden shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
+                <div className="h-24 bg-gradient-to-br from-primary/15 to-secondary/15" />
+                <div className="p-8 text-center">
+                  <div className="text-5xl mb-4">{item.icon}</div>
+                  <h3 className="text-xl font-bold text-foreground mb-3">{item.title}</h3>
+                  <p className="text-foreground/80">{item.description}</p>
+                </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-24 bg-sky">
+        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-foreground mb-4">How It Works</h2>
+            <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
+              Four simple steps to protect your family's future
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: "1",
+                title: "Complete Online Questionnaire",
+                time: "15-20 minutes",
+                description: "Answer simple questions about your family, assets, and wishes",
+                icon: "📝",
+              },
+              {
+                step: "2",
+                title: "Attorney Review",
+                time: "2-3 business days",
+                description: "Licensed attorney reviews and customizes your documents",
+                icon: "👨‍⚖️",
+              },
+              {
+                step: "3",
+                title: "Sign & Notarize",
+                time: "At your convenience",
+                description: "We provide instructions; many clients use mobile notary services",
+                icon: "✍️",
+              },
+              {
+                step: "4",
+                title: "Fund Your Trust",
+                time: "We guide you",
+                description: "We guide you through transferring assets into your trust",
+                icon: "🏦",
+              },
+            ].map((item) => (
+              <div key={item.step} className="bg-white rounded-3xl overflow-hidden shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300">
+                <div className="h-20 bg-gradient-to-br from-primary/15 to-secondary/15 flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-full bg-secondary text-white flex items-center justify-center text-xl font-bold">
+                    {item.step}
+                  </div>
+                </div>
+                <div className="p-8 text-center">
+                  <div className="text-4xl mb-4">{item.icon}</div>
+                  <h3 className="text-xl font-bold text-foreground mb-2">{item.title}</h3>
+                  <p className="text-sm font-semibold text-secondary mb-3">{item.time}</p>
+                  <p className="text-foreground/80">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Expected Timeline */}
+      <section className="py-24 bg-white">
+        <div className="mx-auto max-w-4xl px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-foreground mb-4">Expected Timeline</h2>
+            <p className="text-lg text-foreground/80">
+              Most clients complete everything within 1 week
+            </p>
+          </div>
+          <div className="bg-gradient-to-br from-tan to-sage/30 rounded-3xl p-8 shadow-premium">
+            <div className="space-y-6">
+              {[
+                { task: "Online questionnaire", time: "15-20 minutes", icon: "⏱️" },
+                { task: "Attorney review", time: "2-3 business days", icon: "📋" },
+                { task: "Document delivery", time: "Same day after review", icon: "📬" },
+                { task: "Signing", time: "At your convenience", icon: "✅" },
+              ].map((item, index) => (
+                <div key={item.task} className="flex items-center gap-6 bg-white rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300">
+                  <div className="text-4xl flex-shrink-0">{item.icon}</div>
+                  <div className="flex-1">
+                    <h3 className="font-bold text-foreground text-lg">{item.task}</h3>
+                  </div>
+                  <div className="text-right flex-shrink-0">
+                    <p className="text-secondary font-semibold">{item.time}</p>
+                  </div>
+                  {index < 3 && (
+                    <div className="absolute left-[3.5rem] ml-6 mt-20 w-0.5 h-6 bg-primary/30" />
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className="mt-8 text-center">
+              <div className="inline-block bg-secondary/10 rounded-full px-6 py-3">
+                <p className="text-foreground font-bold">
+                  <span className="text-secondary text-2xl">Total: </span>
+                  <span className="text-xl">Most clients complete within 1 week</span>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -102,7 +206,7 @@ export default function TrustPage() {
               />
             </div>
           </div>
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             {[
               {
                 title: "Avoid Probate",
@@ -122,6 +226,57 @@ export default function TrustPage() {
                 <p className="text-foreground/80">{benefit.description}</p>
               </div>
             ))}
+          </div>
+
+          {/* Why It Matters - Enhanced Comparison */}
+          <div className="mt-16">
+            <h3 className="text-3xl font-bold text-foreground text-center mb-12">Why It Matters: The Numbers</h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Cost Savings",
+                  icon: "💰",
+                  comparison: "Probate: 4-7% of estate value",
+                  solution: "Living Trust: $599 one-time fee",
+                  example: "On a $500k estate, probate costs $20k-$35k vs. $599 with a trust",
+                  bg: "bg-sage",
+                },
+                {
+                  title: "Time Savings",
+                  icon: "⏰",
+                  comparison: "Probate: 6-18 months",
+                  solution: "Trust: Assets transfer immediately",
+                  example: "Your family gets access to funds right away, not after months of waiting",
+                  bg: "bg-sky",
+                },
+                {
+                  title: "Privacy Protection",
+                  icon: "🔒",
+                  comparison: "Will: Becomes public record",
+                  solution: "Trust: Remains completely private",
+                  example: "Your assets, beneficiaries, and wishes stay confidential",
+                  bg: "bg-white",
+                },
+              ].map((item) => (
+                <div key={item.title} className={`${item.bg} rounded-3xl p-8 shadow-premium hover:shadow-premium-hover hover:-translate-y-2 transition-all duration-300`}>
+                  <div className="text-5xl mb-4 text-center">{item.icon}</div>
+                  <h4 className="text-2xl font-bold text-foreground mb-4 text-center">{item.title}</h4>
+                  <div className="space-y-4">
+                    <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded">
+                      <p className="text-sm font-semibold text-red-800 mb-1">Without Trust:</p>
+                      <p className="text-foreground/80 text-sm">{item.comparison}</p>
+                    </div>
+                    <div className="bg-green-50 border-l-4 border-green-400 p-4 rounded">
+                      <p className="text-sm font-semibold text-green-800 mb-1">With Trust:</p>
+                      <p className="text-foreground/80 text-sm">{item.solution}</p>
+                    </div>
+                    <div className="bg-primary/5 p-4 rounded-lg">
+                      <p className="text-sm text-foreground/70 italic">{item.example}</p>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
