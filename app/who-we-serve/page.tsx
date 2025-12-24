@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
+import WhoWeServeCarousel from "@/components/WhoWeServeCarousel";
 
 export const metadata: Metadata = {
   title: "Who We Serve | Estate Planning for Every Family",
@@ -106,16 +107,7 @@ export default function WhoWeServePage() {
               </p>
             </div>
             <div className="relative mx-auto lg:mx-0">
-              <div className="rounded-3xl overflow-hidden shadow-premium max-w-md hover:shadow-premium-hover transition-all duration-300">
-                <Image
-                  src="/images/hero/family-sunset.jpg"
-                  alt="Happy family enjoying San Diego sunset"
-                  width={500}
-                  height={400}
-                  className="w-full h-auto object-cover"
-                  priority
-                />
-              </div>
+              <WhoWeServeCarousel />
             </div>
           </div>
         </div>
