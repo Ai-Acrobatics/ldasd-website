@@ -41,12 +41,12 @@ export default function HeroCarousel() {
   }, []);
 
   return (
-    <div className="relative h-full rounded-3xl overflow-hidden shadow-2xl">
+    <div className="relative h-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl">
       {/* Carousel Images with Crossfade */}
       {carouselImages.map((image, index) => (
         <div
           key={image.src}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
+          className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
             index === currentIndex ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -56,35 +56,35 @@ export default function HeroCarousel() {
             fill
             className="object-cover"
             priority={index === 0}
-            sizes="(max-width: 768px) 100vw, 50vw"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 600px"
           />
         </div>
       ))}
 
       {/* Light Warm Overlay - NOT dark */}
-      <div className="absolute inset-0 bg-gradient-to-t from-secondary/30 via-secondary/10 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-secondary/40 via-secondary/10 to-transparent" />
 
       {/* Glass-morphism Stats Cards */}
-      <div className="absolute bottom-0 inset-x-0 p-6">
-        <div className="grid grid-cols-2 gap-4">
+      <div className="absolute bottom-0 inset-x-0 p-3 sm:p-4 lg:p-6">
+        <div className="grid grid-cols-2 gap-2 sm:gap-3 lg:gap-4">
           {stats.map((stat) => (
             <div
               key={stat.label}
-              className="text-center p-3 rounded-xl bg-white/80 backdrop-blur-md shadow-glass border border-white/50"
+              className="text-center p-2 sm:p-3 rounded-lg sm:rounded-xl bg-white/85 backdrop-blur-md shadow-glass border border-white/50"
             >
-              <p className="text-2xl sm:text-3xl font-bold text-primary">
-                {stat.value}<span className="text-lg text-secondary">{stat.suffix}</span>
+              <p className="text-lg sm:text-2xl lg:text-3xl font-bold text-primary leading-tight">
+                {stat.value}<span className="text-sm sm:text-lg text-secondary">{stat.suffix}</span>
               </p>
-              <p className="text-xs text-foreground/70 font-medium">{stat.label}</p>
+              <p className="text-[10px] sm:text-xs text-foreground/70 font-medium leading-tight mt-0.5">{stat.label}</p>
             </div>
           ))}
         </div>
       </div>
 
       {/* San Diego Location Badge with Pin Icon */}
-      <div className="absolute top-6 right-6 flex items-center gap-2 bg-white/90 backdrop-blur-md text-primary text-sm font-bold px-4 py-2 rounded-full shadow-glass border border-white/50">
+      <div className="absolute top-3 right-3 sm:top-4 sm:right-4 lg:top-6 lg:right-6 flex items-center gap-1.5 sm:gap-2 bg-white/90 backdrop-blur-md text-primary text-xs sm:text-sm font-bold px-2.5 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-glass border border-white/50">
         <svg
-          className="w-4 h-4 text-secondary"
+          className="w-3 h-3 sm:w-4 sm:h-4 text-secondary"
           fill="currentColor"
           viewBox="0 0 20 20"
         >
@@ -98,15 +98,15 @@ export default function HeroCarousel() {
       </div>
 
       {/* Carousel Indicators */}
-      <div className="absolute bottom-32 left-1/2 -translate-x-1/2 flex gap-2">
+      <div className="absolute bottom-[85px] sm:bottom-28 lg:bottom-32 left-1/2 -translate-x-1/2 flex gap-1.5 sm:gap-2">
         {carouselImages.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+            className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
               index === currentIndex
-                ? "bg-white w-8"
-                : "bg-white/50 hover:bg-white/75"
+                ? "bg-white w-5 sm:w-8"
+                : "bg-white/50 hover:bg-white/75 w-1.5 sm:w-2"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
