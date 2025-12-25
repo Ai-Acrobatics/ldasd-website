@@ -214,8 +214,8 @@ export default function Home() {
             <div className="order-1 lg:order-2 relative">
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/families/multi-gen.jpg"
-                  alt="Multi-generational family enjoying time together"
+                  src="/images/hero/hero-family-beach.png"
+                  alt="San Diego family enjoying the beach together"
                   width={600}
                   height={750}
                   className="w-full h-auto object-cover aspect-[4/5]"
