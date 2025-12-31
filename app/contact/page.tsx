@@ -71,21 +71,28 @@ export default function ContactPage() {
     <div className="bg-background">
       <Toaster position="top-center" />
 
-      {/* Hero with San Diego Skyline */}
+      {/* Hero with San Diego La Jolla Coast */}
       <section className="relative py-24 sm:py-32 overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/images/san-diego/skyline.jpg"
-            alt="San Diego Skyline - Home of LDASD Estate Planning"
+            src="/images/hero/hero-retirees-lajolla.png"
+            alt="Beautiful La Jolla Coast, San Diego - Home of LDASD Estate Planning"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/60 via-primary/50 to-primary-dark/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/70 via-primary/60 to-primary-dark/70" />
+          {/* Prism overlay */}
+          <div className="absolute inset-0 bg-gradient-to-r from-rose-500/5 via-transparent to-cyan-500/5 mix-blend-overlay" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8 text-center">
-          <span className="inline-block text-secondary font-semibold tracking-wider text-sm uppercase mb-4 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full">
+          <span 
+            className="inline-block text-secondary font-semibold tracking-wider text-sm uppercase mb-4 bg-white/15 backdrop-blur-xl px-5 py-2.5 rounded-full border border-white/20"
+            style={{
+              boxShadow: '0 8px 32px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.2)',
+            }}
+          >
             Get In Touch
           </span>
           <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl mb-6 drop-shadow-lg">
@@ -188,8 +195,15 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-premium hover:shadow-premium-hover transition-all duration-400 ring-1 ring-black/5">
+            {/* Contact Form with Glass/Prism Effect */}
+            <div 
+              className="bg-white/85 backdrop-blur-2xl rounded-3xl p-8 shadow-premium hover:shadow-premium-hover transition-all duration-400 ring-1 ring-white/50 relative overflow-hidden"
+              style={{
+                boxShadow: '0 8px 32px rgba(0,0,0,0.1), inset 0 1px 0 rgba(255,255,255,0.6)',
+              }}
+            >
+              {/* Subtle prism border */}
+              <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-r from-rose-400/10 via-amber-400/5 via-cyan-400/5 to-violet-400/10 opacity-50 blur-sm pointer-events-none" />
               <h2 className="text-2xl font-bold text-foreground mb-6">Send a Message</h2>
 
               {isSubmitted ? (

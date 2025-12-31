@@ -89,10 +89,13 @@ export default function Home() {
     <div className="bg-background overflow-hidden">
       {/* Hero Section with Carousel */}
       <section className="relative isolate min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-sand via-ivory to-tan">
-        {/* Warm gradient orbs */}
+        {/* Enhanced prism/glass gradient orbs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full bg-secondary/15 blur-[120px] animate-pulse" />
           <div className="absolute -bottom-40 -left-40 w-[500px] h-[500px] rounded-full bg-primary/10 blur-[100px] animate-pulse" style={{ animationDelay: "1s" }} />
+          {/* Prism light effects */}
+          <div className="absolute top-1/4 left-1/4 w-[300px] h-[300px] rounded-full bg-gradient-to-br from-rose-500/5 via-amber-500/5 to-transparent blur-[60px]" />
+          <div className="absolute bottom-1/4 right-1/4 w-[400px] h-[400px] rounded-full bg-gradient-to-tl from-cyan-500/5 via-violet-500/5 to-transparent blur-[80px]" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 py-32 lg:px-8">
@@ -240,9 +243,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Products Section with 3D Cards */}
-      <section className="relative py-24 sm:py-32 bg-sky">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      {/* Products Section with Glass/Prism Cards */}
+      <section className="relative py-24 sm:py-32 bg-sky overflow-hidden">
+        {/* Prism background effects */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-gradient-to-br from-rose-500/5 via-transparent to-transparent blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-cyan-500/5 via-transparent to-transparent blur-3xl" />
+        </div>
+        
+        <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-16">
             <span className="inline-block text-secondary font-semibold tracking-wider text-sm uppercase mb-4">
               Simple, Affordable Products
@@ -255,28 +264,34 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          {/* Centered grid */}
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {products.map((product, index) => (
               <Link
                 key={product.name}
                 href={product.href}
-                className="group relative bg-white rounded-3xl p-8 shadow-premium hover:shadow-premium-hover transition-all duration-400 transform hover:-translate-y-2 hover:scale-[1.02] ring-1 ring-black/5"
+                className="group relative bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-premium hover:shadow-premium-hover transition-all duration-400 transform hover:-translate-y-2 hover:scale-[1.02] ring-1 ring-white/50"
+                style={{
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.5)',
+                }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/10 via-primary/5 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                {/* Prism hover effect */}
+                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 via-secondary/10 to-cyan-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-400" />
+                <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-r from-rose-400/20 via-amber-400/10 via-cyan-400/10 to-violet-400/20 opacity-0 group-hover:opacity-60 blur-sm transition-opacity duration-400" />
 
                 <div className="relative">
                   <div className="flex items-start justify-between mb-6">
-                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 text-primary group-hover:scale-110 group-hover:rotate-3 transition-all duration-400">
+                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 text-primary group-hover:scale-110 group-hover:rotate-3 transition-all duration-400 shadow-md">
                       {product.icon}
                     </div>
-                    <span className="text-sm font-semibold text-secondary bg-secondary/10 px-3 py-1.5 rounded-full">{product.price}</span>
+                    <span className="text-sm font-semibold text-secondary bg-secondary/10 px-3 py-1.5 rounded-full backdrop-blur-sm">{product.price}</span>
                   </div>
 
                   <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                     {product.name}
                   </h3>
 
-                  <p className="text-foreground/80 leading-relaxed mb-6">
+                  <p className="text-foreground/70 leading-relaxed mb-6">
                     {product.description}
                   </p>
 
@@ -305,12 +320,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials with Glass Morphism */}
+      {/* Testimonials with Enhanced Glass Morphism */}
       <section className="relative py-24 sm:py-32 bg-sage overflow-hidden">
-        {/* Background orbs */}
+        {/* Enhanced prism background orbs */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-1/4 -right-20 w-[400px] h-[400px] rounded-full bg-primary/10 blur-[100px]" />
           <div className="absolute bottom-1/4 -left-20 w-[300px] h-[300px] rounded-full bg-secondary/10 blur-[80px]" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-rose-500/3 via-amber-500/3 to-cyan-500/3 blur-3xl" />
         </div>
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
@@ -326,27 +342,34 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          {/* Centered testimonial cards */}
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
-                className="relative bg-white/60 backdrop-blur-md rounded-3xl p-8 shadow-glass ring-1 ring-white/50 hover:bg-white/70 hover:shadow-premium transition-all duration-400 transform hover:-translate-y-1"
+                className="relative bg-white/70 backdrop-blur-xl rounded-3xl p-8 shadow-glass ring-1 ring-white/60 hover:bg-white/80 hover:shadow-premium transition-all duration-400 transform hover:-translate-y-2"
+                style={{
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,0.6)',
+                }}
               >
+                {/* Subtle prism border on hover */}
+                <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-r from-rose-400/20 via-amber-400/10 to-cyan-400/20 opacity-0 hover:opacity-50 blur-sm transition-opacity duration-400 pointer-events-none" />
+                
                 {/* Stars */}
-                <div className="flex gap-1 mb-6">
+                <div className="relative flex gap-1 mb-6">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                    <svg key={i} className="w-5 h-5 text-secondary drop-shadow-sm" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
                 </div>
 
-                <blockquote className="text-foreground text-lg leading-relaxed mb-6">
+                <blockquote className="relative text-foreground text-lg leading-relaxed mb-6">
                   &ldquo;{testimonial.content}&rdquo;
                 </blockquote>
 
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center ring-2 ring-white/50">
+                <div className="relative flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center ring-2 ring-white/60 shadow-md">
                     <span className="text-primary font-bold text-lg">{testimonial.author.charAt(0)}</span>
                   </div>
                   <div>

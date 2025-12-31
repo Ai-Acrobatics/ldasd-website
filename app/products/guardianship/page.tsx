@@ -4,24 +4,24 @@ import Link from "next/link";
 import ProductHeroCarousel from "@/components/ProductHeroCarousel";
 
 const heroImages = [
-  { src: "/images/products/trust-carousel-1.jpg", alt: "Family at Coronado Beach, San Diego" },
-  { src: "/images/products/trust-carousel-2.jpg", alt: "Multi-generational family portrait, San Diego" },
-  { src: "/images/products/trust-carousel-3.jpg", alt: "Parents with children at home, San Diego" },
-  { src: "/images/products/trust-carousel-4.jpg", alt: "Happy couple planning their legacy, San Diego" },
+  { src: "/images/hero/hero-family-beach.png", alt: "Family at San Diego Beach" },
+  { src: "/images/hero/hero-family-home.png", alt: "Happy family at their San Diego home" },
+  { src: "/images/hero/hero-couple-balboa.png", alt: "Couple at Balboa Park, San Diego" },
+  { src: "/images/hero/hero-retirees-lajolla.png", alt: "Retirees at La Jolla, San Diego" },
 ];
 
 export default function GuardianshipPage() {
   return (
     <div className="bg-background">
       <ProductHeroCarousel images={heroImages}>
-        <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl">Guardianship Designation</h1>
-          <p className="mt-6 text-xl text-white/90">
+        <div className="flex flex-col items-center justify-center h-full px-6 lg:px-12 py-16 text-center">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">Guardianship Designation</h1>
+          <p className="mt-6 text-lg sm:text-xl text-white/90 max-w-2xl">
             Name who will care for your minor children if something happens to you. The most important decision you'll make as a parent.
           </p>
-          <p className="mt-4 text-lg text-secondary font-semibold bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full inline-block shadow-lg">Included with all Will and Trust packages</p>
+          <p className="mt-6 text-lg text-secondary font-semibold bg-white/10 backdrop-blur-xl px-6 py-2.5 rounded-full inline-block shadow-lg border border-white/20">Included with all Will and Trust packages</p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/products/will" className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl">
+            <Link href="/products/will" className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-secondary-light hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl">
               Create Your Will (Includes Guardianship)
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />

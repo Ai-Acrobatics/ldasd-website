@@ -5,10 +5,10 @@ import Image from "next/image";
 import ProductHeroCarousel from "@/components/ProductHeroCarousel";
 
 const heroImages = [
-  { src: "/images/products/trust-carousel-1.jpg", alt: "Family at Coronado Beach, San Diego" },
-  { src: "/images/products/trust-carousel-2.jpg", alt: "Multi-generational family portrait, San Diego" },
-  { src: "/images/products/trust-carousel-3.jpg", alt: "Parents with children at home, San Diego" },
-  { src: "/images/products/trust-carousel-4.jpg", alt: "Happy couple planning their legacy, San Diego" },
+  { src: "/images/hero/hero-couple-balboa.png", alt: "Couple at Balboa Park, San Diego" },
+  { src: "/images/hero/hero-family-beach.png", alt: "Family at San Diego Beach" },
+  { src: "/images/hero/hero-retirees-lajolla.png", alt: "Retirees at La Jolla, San Diego" },
+  { src: "/images/hero/hero-family-home.png", alt: "Happy family at their San Diego home" },
 ];
 
 export default function TrustPage() {
@@ -16,38 +16,36 @@ export default function TrustPage() {
     <div className="bg-background">
       {/* Hero with Carousel */}
       <ProductHeroCarousel images={heroImages}>
-        <div className="flex items-center justify-center h-full pt-20">
-          <div className="mx-auto max-w-4xl px-6 lg:px-8 text-center">
-            <span className="inline-block px-4 py-1 rounded-full bg-secondary text-white text-sm font-semibold mb-6 shadow-lg">
-              Most Popular
-            </span>
-            <h1 className="text-5xl font-bold tracking-tight text-white sm:text-6xl">
-              Living Trust
-            </h1>
-            <p className="mt-6 text-xl text-white/90 max-w-3xl mx-auto">
-              Avoid probate, keep your estate private, and protect your assets with a comprehensive living trust.
-            </p>
-            <div className="mt-8 flex items-baseline justify-center gap-4">
-              <span className="text-5xl font-bold text-secondary">$599</span>
-              <span className="text-white/90">one-time fee</span>
-            </div>
-            <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
-              <Link
-                href="/book"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-accent transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                Create Your Trust
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </Link>
-              <Link
-                href="/pricing"
-                className="inline-flex items-center justify-center rounded-full bg-white/10 px-8 py-4 text-lg font-semibold text-white ring-1 ring-white/20 hover:bg-white/20 transition-all duration-300"
-              >
-                Compare Plans
-              </Link>
-            </div>
+        <div className="flex flex-col items-center justify-center h-full px-6 lg:px-12 py-16 text-center">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary text-white text-sm font-semibold mb-6 shadow-lg">
+            Most Popular
+          </span>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white">
+            Living Trust
+          </h1>
+          <p className="mt-6 text-lg sm:text-xl text-white/90 max-w-2xl">
+            Avoid probate, keep your estate private, and protect your assets with a comprehensive living trust.
+          </p>
+          <div className="mt-8 flex items-baseline justify-center gap-4">
+            <span className="text-4xl sm:text-5xl font-bold text-secondary">$599</span>
+            <span className="text-white/90">one-time fee</span>
+          </div>
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/book"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-secondary px-8 py-4 text-lg font-semibold text-white hover:bg-secondary-light hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+            >
+              Create Your Trust
+              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+            <Link
+              href="/pricing"
+              className="inline-flex items-center justify-center rounded-full bg-white/15 backdrop-blur-sm px-8 py-4 text-lg font-semibold text-white ring-1 ring-white/30 hover:bg-white/25 transition-all duration-300"
+            >
+              Compare Plans
+            </Link>
           </div>
         </div>
       </ProductHeroCarousel>
