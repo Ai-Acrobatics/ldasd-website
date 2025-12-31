@@ -99,20 +99,36 @@ export default function AboutPage() {
             </div>
 
             <div className="relative">
-              <div className="rounded-3xl overflow-hidden shadow-premium hover:shadow-premium-hover transition-all duration-400 transform hover:-translate-y-2">
+              {/* Glass container with prism effect */}
+              <div className="relative rounded-3xl overflow-hidden shadow-premium hover:shadow-premium-hover transition-all duration-400 transform hover:-translate-y-2 ring-1 ring-white/30">
+                {/* Prism border effect */}
+                <div className="absolute -inset-[1px] rounded-3xl bg-gradient-to-r from-rose-400/30 via-amber-400/20 via-cyan-400/20 to-violet-400/30 opacity-60 blur-sm z-10 pointer-events-none" />
+                
                 <div className="relative">
                   <Image
-                    src="/images/san-diego/coronado-beach.jpg"
-                    alt="Beautiful San Diego Coronado Beach - Home of LDASD Estate Planning"
+                    src="/images/hero/hero-couple-balboa.png"
+                    alt="Happy couple at Balboa Park, San Diego - Home of LDASD Estate Planning"
                     width={600}
                     height={750}
                     className="w-full h-auto object-cover aspect-[4/5]"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent opacity-40" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-transparent" />
                 </div>
               </div>
-              <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-premium p-6 max-w-[220px] hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-400">
-                <p className="text-primary font-bold text-lg">Based in San Diego</p>
+              
+              {/* Glass card overlay */}
+              <div 
+                className="absolute -bottom-6 -right-6 bg-white/90 backdrop-blur-xl rounded-2xl shadow-premium p-6 max-w-[220px] hover:shadow-premium-hover hover:-translate-y-1 transition-all duration-400 ring-1 ring-white/50"
+                style={{
+                  boxShadow: '0 8px 32px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.6)',
+                }}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                  <svg className="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                  </svg>
+                  <p className="text-primary font-bold text-lg">San Diego Based</p>
+                </div>
                 <p className="text-foreground/60 text-sm">Serving families in all 50 states</p>
               </div>
             </div>

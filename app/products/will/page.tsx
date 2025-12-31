@@ -4,10 +4,10 @@ import Link from "next/link";
 import ProductHeroCarousel from "@/components/ProductHeroCarousel";
 
 const heroImages = [
-  { src: "/images/products/trust-carousel-1.jpg", alt: "Family at Coronado Beach, San Diego" },
-  { src: "/images/products/trust-carousel-2.jpg", alt: "Multi-generational family portrait, San Diego" },
-  { src: "/images/products/trust-carousel-3.jpg", alt: "Parents with children at home, San Diego" },
-  { src: "/images/products/trust-carousel-4.jpg", alt: "Happy couple planning their legacy, San Diego" },
+  { src: "/images/hero/hero-family-home.png", alt: "Happy family at their San Diego home" },
+  { src: "/images/hero/hero-couple-balboa.png", alt: "Couple at Balboa Park, San Diego" },
+  { src: "/images/hero/hero-family-beach.png", alt: "Family at San Diego Beach" },
+  { src: "/images/hero/hero-retirees-lajolla.png", alt: "Retirees at La Jolla, San Diego" },
 ];
 
 const features = [
